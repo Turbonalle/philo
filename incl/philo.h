@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 15:55:22 by jbagger           #+#    #+#             */
-/*   Updated: 2023/04/14 15:57:08 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/04/20 17:58:06 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,25 +24,48 @@
 # define GREEN "\033[32m"
 # define YELLOW "\033[33m"
 
-typedef struct s_data
-{
-	int			error;
-	int			philo;
-	int			die;
-	int			eat;
-	int			sleep;
-	int			times_to_eat;
-	long int	start;
-	long int	time;
-}				t_data;
-
 typedef struct s_philo
 {
-	pthread_t	*philo;
-}				t_philo;
+	pthread_mutex_t	l_fork;
+	pthread_mutex_t	r_fork;
+	pthread_t		thread;
+	struct s_data	*data;
+	long int		t_last_eat;
+	int				alive;
+	int				i;
+}					t_philo;
+
+typedef struct s_data
+{
+	pthread_mutex_t	*forks;
+	t_philo			*philo;
+	long int		t_start;
+	int				error;
+	int				n_philo;
+	int				t_die;
+	int				t_eat;
+	int				t_sleep;
+	int				n_eat;
+}					t_data;
 
 // ERROR
-void	error(char *str, t_data *data, int error_code);
-int		error_check(t_data *data, int ac, char *av[]);
+void			error(char *str, t_data *data, int error_code);
+int				error_check(t_data *data, int ac, char *av[]);
+
+// INIT
+pthread_mutex_t	*init_mutex(int n, pthread_mutex_t *forks);
+int				init_data(t_data *data, int ac, char *av[]);
+void			init_philo(t_data *data);
+
+// PHILO
+void			*philosopher(void *philo);
+
+// CLEAN
+int				join_threads(t_data *data, pthread_t *philos);
+void			destroy_mutex(t_data *data, pthread_mutex_t *forks);
+
+// TIME
+int				start_time(t_data *data);
+long long		timestamp(void);
 
 #endif
