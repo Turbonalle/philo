@@ -19,22 +19,40 @@ int	alive(t_philo *p)
 
 void	p_eat(t_philo *p)
 {
-	printf("#%d is Eating\n", p->i);
+	pick_fork_l();
+	pick_fork_r();
+	printf("%d #%d is Eating\n", timestamp() - p->data->t_start, p->i);
+	p->t_last_eat = timestamp();
 }
+
+
+
+void	p_sleep(t_philo *p)
+{
+	printf("%llu %d is sleeping\n", timestamp() - p->data->t_start, p->i);
+	usleep(p->data->t_sleep);
+}
+
+
 
 void *philosopher(void *philo)
 {
 	t_philo	*p;
 
 	p = (t_philo*)philo;
+	if (p->i % 2 == 0)
+		usleep(p->data->t_eat);
 	printf("I am philosopher #%d\n", p->i);
 	while (p->alive)
 	{
 		usleep(1000);
 		p_eat(p);
-		// p_sleep();
-		// p_think();
-		
+		if (p->data->finished)
+			break ;
+		p_sleep(p);
+		p_think();
+		if (timestamp() - p->t_last_eat >= p->data->t_die)
+			p->alive = 0;
 	}
 
 	return (NULL);

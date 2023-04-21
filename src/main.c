@@ -51,11 +51,9 @@ int	start_dining(t_data *data)
 {
 	pthread_t 		philos[data->n_philo];
 	pthread_mutex_t forks[data->n_philo];
-	int				i;
 
 	data->forks = init_mutex(data->n_philo, forks);
 	start_time(data);
-	i = 0;
 	init_philo(data);
 	join_threads(data, philos);
 	destroy_mutex(data, forks);
