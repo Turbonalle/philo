@@ -31,6 +31,8 @@ typedef struct s_philo
 	pthread_t		thread;
 	struct s_data	*data;
 	long int		t_last_eat;
+	int				times_eaten;
+	int				finished;
 	int				alive;
 	int				i;
 }					t_philo;

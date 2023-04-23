@@ -25,7 +25,12 @@ int	start_time(t_data *data)
 	return (0);
 }
 
-long long	timestamp(void)
+long long	time_since(long long start)
+{
+	return (time_now() - start);
+}
+
+long long	time_now(void)
 {
 	struct timeval	time;
 	

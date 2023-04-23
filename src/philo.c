@@ -12,25 +12,43 @@
 
 #include "../incl/philo.h"
 
-int	alive(t_philo *p)
-{
-	return (p->alive);
-}
-
 void	p_eat(t_philo *p)
 {
-	pick_fork_l();
-	pick_fork_r();
-	printf("%d #%d is Eating\n", timestamp() - p->data->t_start, p->i);
-	p->t_last_eat = timestamp();
+	pthread_mutex_lock(&(p->data->forks[p->i - 1]));
+	printf("%llu %d has taken a fork\n", time_since(p->data->t_start), p->i);
+	pthread_mutex_lock(&(p->data->forks[(p->i - 1) % p->data->n_philo]));
+	printf("%llu %d has taken a fork\n", time_since(p->data->t_start), p->i);
+	printf("%llu %d is eating\n", time_since(p->data->t_start), p->i);
+	p->t_last_eat = time_now();
+	pthread_mutex_unlock(&(p->data->forks[p->i - 1]));
+	pthread_mutex_unlock(&(p->data->forks[(p->i - 1) % p->data->n_philo]));
+	printf("%llu %d has eaten %d times\n", time_since(p->data->t_start), p->i, p->times_eaten);	// Remove
+	p->times_eaten++;
+	if (p->times_eaten == p->data->n_eat)
+		p->finished = 1;
 }
 
 
 
 void	p_sleep(t_philo *p)
 {
-	printf("%llu %d is sleeping\n", timestamp() - p->data->t_start, p->i);
+	printf("%llu %d is sleeping\n", time_since(p->data->t_start), p->i);
 	usleep(p->data->t_sleep);
+}
+
+
+
+void	p_think(t_philo *p)
+{
+	printf("%llu %d is thinking\n", time_since(p->data->t_start), p->i);
+}
+
+
+
+void	even_philos_wait(t_philo *p)
+{
+	if (p->i % 2 == 0)
+		usleep(p->data->t_eat);
 }
 
 
@@ -40,20 +58,21 @@ void *philosopher(void *philo)
 	t_philo	*p;
 
 	p = (t_philo*)philo;
-	if (p->i % 2 == 0)
-		usleep(p->data->t_eat);
+	even_philos_wait(p);
 	printf("I am philosopher #%d\n", p->i);
 	while (p->alive)
 	{
-		usleep(1000);
+		// usleep(1000);
 		p_eat(p);
-		if (p->data->finished)
+		if (p->finished)
+		{
+			printf("%llu %d has finished\n", time_since(p->data->t_start), p->i);	// Remove
 			break ;
+		}
 		p_sleep(p);
-		p_think();
-		if (timestamp() - p->t_last_eat >= p->data->t_die)
+		p_think(p);
+		if (time_since(p->t_last_eat) >= p->data->t_die)
 			p->alive = 0;
 	}
-
 	return (NULL);
 }

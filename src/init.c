@@ -54,8 +54,9 @@ void	init_philo(t_data *data)
 		data->philo[i].data = data;
 		data->philo[i].alive = 1;
 		data->philo[i].i = i + 1;
-		data->philo[i].t_last_eat = 0;
+		data->philo[i].finished = 0;
 		if (pthread_create(&(data->philo[i].thread), NULL, &philosopher, &(data->philo[i])) != 0)
 			error("Failed to create thread\n", data, 9);
+		data->philo[i].t_last_eat = time_now();
 	}
 }
