@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 13:57:19 by jbagger           #+#    #+#             */
-/*   Updated: 2023/04/24 11:15:15 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/04/24 13:35:36 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,16 +63,17 @@ void	init_philo(t_data *data)
 	
 	i = -1;
 	data->all_alive = 1;
+	start_time(data);
 	while (++i < data->n_philo)
 	{
-		// usleep?
+		usleep(10);
 		data->philo[i].data = data;
 		data->philo[i].n = i + 1;
 		data->philo[i].finished = 0;
 		data->philo[i].times_eaten = 0;
 		choose_forks(&(data->philo[i]));
+		data->philo[i].t_last_eat = data->t_start;
 		if (pthread_create(&(data->philo[i].thread), NULL, &philosopher, &(data->philo[i])) != 0)
 			error("Failed to create thread\n", data, 9);
-		data->philo[i].t_last_eat = time_now();
 	}
 }

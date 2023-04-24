@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 13:59:34 by jbagger           #+#    #+#             */
-/*   Updated: 2023/04/24 11:13:01 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/04/24 15:11:13 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,20 +43,20 @@ int		alive(t_philo *p)
 void	pick_first_fork(t_philo *p)
 {
 	pthread_mutex_lock(&(p->data->forks[p->fork1]));
-	message(p, "has taken a fork");
+	message(p, CYAN"has taken a fork"WHITE);
 }
 
 void	pick_second_fork(t_philo *p)
 {
 	pthread_mutex_lock(&(p->data->forks[p->fork2]));
-	message(p, "has taken a fork");
+	message(p, CYAN"has taken a fork"WHITE);
 }
 
 void	p_eat(t_philo *p)
 {
-	message(p, CYAN"is eating"WHITE);
-	usleep(p->data->t_eat * 1000);
+	message(p, PURPLE"is eating"WHITE);
 	p->t_last_eat = time_now();
+	usleep(p->data->t_eat * 1000);
 	p->times_eaten++;
 	if (p->times_eaten == p->data->n_eat)
 		p->finished = 1;
@@ -71,7 +71,7 @@ void	put_forks_down(t_philo *p)
 
 void	p_sleep(t_philo *p)
 {
-	message(p, "is sleeping");
+	message(p, YELLOW"is sleeping"WHITE);
 	ft_sleep(p->data->t_sleep);
 }
 
@@ -100,7 +100,7 @@ void *philosopher(void *philo)
 	t_philo	*p;
 
 	p = (t_philo*)philo;
-	even_philos_wait(p);
+	// even_philos_wait(p);
 	while (p->data->all_alive)
 	{
 		// usleep(1000);
@@ -110,12 +110,25 @@ void *philosopher(void *philo)
 			break ;
 		}
 		pick_first_fork(p);
+		if (alive(p))
+		{
+			pthread_mutex_unlock(&(p->data->forks[p->fork1]));
+			message(p, RED"died"WHITE);
+			break ;
+		}
 		pick_second_fork(p);
+		if (alive(p))
+		{
+			pthread_mutex_unlock(&(p->data->forks[p->fork1]));
+			pthread_mutex_unlock(&(p->data->forks[p->fork2]));
+			message(p, RED"died"WHITE);
+			break ;
+		}
 		p_eat(p);
 		put_forks_down(p);
 		if (p->finished)
 		{
-			message(p, GREEN"HAS FINISHED"WHITE);	// Remove
+			// message(p, GREEN"HAS FINISHED"WHITE);	// Remove
 			break ;
 		}
 		p_sleep(p);

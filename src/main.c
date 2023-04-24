@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 15:57:45 by jbagger           #+#    #+#             */
-/*   Updated: 2023/04/24 11:34:35 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/04/24 15:07:39 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,13 @@ Plan:
 Tip:
 - usleep in every while loop?
 
+- if (n_philo % 2 == 0)
+	if (t_die >= t_eat * 2 + 10 && t_die >= t_eat + t_sleep + 10)
+		->success
+- if (n_philo % 2 == 1)
+	if (t_die >= t_eat * 3 + 10 && t_die >= t_eat + t_sleep + 10)
+		->success
+
 */
 
 
@@ -52,7 +59,6 @@ int	start_dining(t_data *data)
 	pthread_mutex_t forks[data->n_philo];
 
 	data->forks = init_mutex(data->n_philo, forks);
-	start_time(data);
 	init_philo(data);
 	sleep(3);
 	join_threads(data);
@@ -73,6 +79,6 @@ int main(int ac, char *av[])
 	if (start_dining(&data))
 		return (data.error);
 
-	printf(GREEN"Success!\n"WHITE);
+	// printf(GREEN"Success!\n"WHITE);
 	return (0);
 }
