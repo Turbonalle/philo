@@ -6,49 +6,91 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 13:59:34 by jbagger           #+#    #+#             */
-/*   Updated: 2023/04/20 17:54:27 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/04/24 11:13:01 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/philo.h"
 
+void	message(t_philo *p, char *msg)
+{
+	pthread_mutex_lock(&(p->data->print));
+	printf("%-6llu %d %s\n", time_since(p->data->t_start), p->n, msg);
+	pthread_mutex_unlock(&(p->data->print));
+}
+
+void	ft_sleep(int ms)
+{
+	long int	time;
+
+	time = time_now();
+	while (time_now() - time < ms)
+		usleep(ms / 10);
+}
+
+int		alive(t_philo *p)
+{
+	if (time_since(p->t_last_eat) >= p->data->t_die)
+	{
+		pthread_mutex_lock(&(p->data->death));
+		p->data->all_alive = 0;
+		pthread_mutex_unlock(&(p->data->death));
+		return (1);
+	}
+	return (0);
+}
+
+void	pick_first_fork(t_philo *p)
+{
+	pthread_mutex_lock(&(p->data->forks[p->fork1]));
+	message(p, "has taken a fork");
+}
+
+void	pick_second_fork(t_philo *p)
+{
+	pthread_mutex_lock(&(p->data->forks[p->fork2]));
+	message(p, "has taken a fork");
+}
+
 void	p_eat(t_philo *p)
 {
-	pthread_mutex_lock(&(p->data->forks[p->i - 1]));
-	printf("%llu %d has taken a fork\n", time_since(p->data->t_start), p->i);
-	pthread_mutex_lock(&(p->data->forks[(p->i - 1) % p->data->n_philo]));
-	printf("%llu %d has taken a fork\n", time_since(p->data->t_start), p->i);
-	printf("%llu %d is eating\n", time_since(p->data->t_start), p->i);
+	message(p, CYAN"is eating"WHITE);
+	usleep(p->data->t_eat * 1000);
 	p->t_last_eat = time_now();
-	pthread_mutex_unlock(&(p->data->forks[p->i - 1]));
-	pthread_mutex_unlock(&(p->data->forks[(p->i - 1) % p->data->n_philo]));
-	printf("%llu %d has eaten %d times\n", time_since(p->data->t_start), p->i, p->times_eaten);	// Remove
 	p->times_eaten++;
 	if (p->times_eaten == p->data->n_eat)
 		p->finished = 1;
 }
 
+void	put_forks_down(t_philo *p)
+{
+	pthread_mutex_unlock(&(p->data->forks[p->fork1]));
+	pthread_mutex_unlock(&(p->data->forks[p->fork2]));
+}
 
 
 void	p_sleep(t_philo *p)
 {
-	printf("%llu %d is sleeping\n", time_since(p->data->t_start), p->i);
-	usleep(p->data->t_sleep);
+	message(p, "is sleeping");
+	ft_sleep(p->data->t_sleep);
 }
 
 
 
 void	p_think(t_philo *p)
 {
-	printf("%llu %d is thinking\n", time_since(p->data->t_start), p->i);
+		message(p, "is thinking");
 }
 
 
 
 void	even_philos_wait(t_philo *p)
 {
-	if (p->i % 2 == 0)
-		usleep(p->data->t_eat);
+	int	extra_time;
+
+	extra_time = 50;
+	if (p->n % 2 == 0)
+		usleep(p->data->t_eat + extra_time);
 }
 
 
@@ -59,20 +101,25 @@ void *philosopher(void *philo)
 
 	p = (t_philo*)philo;
 	even_philos_wait(p);
-	printf("I am philosopher #%d\n", p->i);
-	while (p->alive)
+	while (p->data->all_alive)
 	{
 		// usleep(1000);
+		if (alive(p))
+		{
+			message(p, RED"died"WHITE);
+			break ;
+		}
+		pick_first_fork(p);
+		pick_second_fork(p);
 		p_eat(p);
+		put_forks_down(p);
 		if (p->finished)
 		{
-			printf("%llu %d has finished\n", time_since(p->data->t_start), p->i);	// Remove
+			message(p, GREEN"HAS FINISHED"WHITE);	// Remove
 			break ;
 		}
 		p_sleep(p);
 		p_think(p);
-		if (time_since(p->t_last_eat) >= p->data->t_die)
-			p->alive = 0;
 	}
 	return (NULL);
 }

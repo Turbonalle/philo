@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 15:57:45 by jbagger           #+#    #+#             */
-/*   Updated: 2023/04/20 17:58:21 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/04/24 11:34:35 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,13 +49,13 @@ Tip:
 
 int	start_dining(t_data *data)
 {
-	pthread_t 		philos[data->n_philo];
 	pthread_mutex_t forks[data->n_philo];
 
 	data->forks = init_mutex(data->n_philo, forks);
 	start_time(data);
 	init_philo(data);
-	join_threads(data, philos);
+	sleep(3);
+	join_threads(data);
 	destroy_mutex(data, forks);
 	return (0);
 }
@@ -73,6 +73,6 @@ int main(int ac, char *av[])
 	if (start_dining(&data))
 		return (data.error);
 
-	printf(GREEN"Success!\n");
+	printf(GREEN"Success!\n"WHITE);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 15:55:22 by jbagger           #+#    #+#             */
-/*   Updated: 2023/04/20 17:58:06 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/04/24 11:35:30 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,26 +23,31 @@
 # define RED "\033[31m"
 # define GREEN "\033[32m"
 # define YELLOW "\033[33m"
+# define BLUE "\033[34m"
+# define PURPLE "\033[35m"
+# define CYAN "\033[36m"
 
 typedef struct s_philo
 {
-	pthread_mutex_t	l_fork;
-	pthread_mutex_t	r_fork;
 	pthread_t		thread;
 	struct s_data	*data;
 	long int		t_last_eat;
+	int				fork1;
+	int				fork2;
 	int				times_eaten;
 	int				finished;
-	int				alive;
-	int				i;
+	int				n;
 }					t_philo;
 
 typedef struct s_data
 {
 	pthread_mutex_t	*forks;
+	pthread_mutex_t	print;
+	pthread_mutex_t	death;
 	t_philo			*philo;
 	long int		t_start;
 	int				error;
+	int				all_alive;
 	int				n_philo;
 	int				t_die;
 	int				t_eat;
@@ -63,11 +68,12 @@ void			init_philo(t_data *data);
 void			*philosopher(void *philo);
 
 // CLEAN
-int				join_threads(t_data *data, pthread_t *philos);
+int				join_threads(t_data *data);
 void			destroy_mutex(t_data *data, pthread_mutex_t *forks);
 
 // TIME
 int				start_time(t_data *data);
-long long		timestamp(void);
+long long		time_since(long long start);
+long long		time_now(void);
 
 #endif
