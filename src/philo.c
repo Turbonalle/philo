@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 13:59:34 by jbagger           #+#    #+#             */
-/*   Updated: 2023/04/25 12:35:53 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/04/25 15:56:27 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_sleep(int ms)
 
 	time = time_now();
 	while (time_now() - time < ms)
-		usleep(10);
+		usleep(1000);
 }
 
 void	pick_first_fork(t_philo *p)
@@ -48,7 +48,7 @@ void	p_eat(t_philo *p)
 	pthread_mutex_lock(&(p->data->m_death));
 	if (p->data->all_alive)
 	{
-		message(p, YELLOW"is eating"WHITE);
+		message(p, PURPLE"is eating"WHITE);
 	}
 	pthread_mutex_unlock(&(p->data->m_death));
 	p->t_last_eat = time_now();
@@ -70,7 +70,7 @@ void	p_sleep(t_philo *p)
 	pthread_mutex_lock(&(p->data->m_death));
 	if (p->data->all_alive)
 	{
-		message(p, "is sleeping"WHITE);
+		message(p, "is sleeping");
 	}
 	pthread_mutex_unlock(&(p->data->m_death));
 	ft_sleep(p->data->t_sleep);
@@ -83,7 +83,7 @@ void	p_think(t_philo *p)
 	pthread_mutex_lock(&(p->data->m_death));
 	if (p->data->all_alive)
 	{
-		message(p, "is thinking"WHITE);
+		message(p, YELLOW"is thinking"WHITE);
 	}
 	pthread_mutex_unlock(&(p->data->m_death));
 }

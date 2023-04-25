@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 15:57:45 by jbagger           #+#    #+#             */
-/*   Updated: 2023/04/25 12:34:07 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/04/25 15:57:33 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ int	start_dining(t_data *data)
 	init_philo(data);
 	while (data->all_alive)
 	{
+		usleep(1000);
 		i = -1;
 		while (++i < data->n_philo)
 		{
