@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 13:57:19 by jbagger           #+#    #+#             */
-/*   Updated: 2023/04/25 12:16:27 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/04/25 16:48:55 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ int	init_data(t_data *data, int ac, char *av[])
 
 
 
-pthread_mutex_t	*init_mutex(int n, pthread_mutex_t *forks)
+pthread_mutex_t *init_mutex(t_data *data, pthread_mutex_t *forks)
 {
 	int i;
 
 	i = 0;
-	while (i < n)
+	while (i < data->n_philo)
 	{
 		pthread_mutex_init(&forks[i], NULL);
 		i++;
@@ -41,7 +41,19 @@ pthread_mutex_t	*init_mutex(int n, pthread_mutex_t *forks)
 	return (forks);
 }
 
+// void	init_mutex(t_data *data)
+// {
+// 	pthread_mutex_t forks[data->n_philo];
+// 	int i;
 
+// 	i = 0;
+// 	data->forks = forks;
+// 	while (i < data->n_philo)
+// 	{
+// 		pthread_mutex_init(&data->forks[i], NULL);
+// 		i++;
+// 	}
+// }
 
 void	choose_forks(t_philo *p)
 {

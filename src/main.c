@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 15:57:45 by jbagger           #+#    #+#             */
-/*   Updated: 2023/04/25 15:57:33 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/04/25 16:48:48 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,48 +54,54 @@ Tip:
 
 void	message(t_philo *p, char *msg)
 {
-	pthread_mutex_lock(&(p->data->m_print));
+	pthread_mutex_lock(&(p->data->m_death));
 	printf("%-6llu %d %s\n", time_since(p->data->t_start), p->n, msg);
-	pthread_mutex_unlock(&(p->data->m_print));
+	pthread_mutex_unlock(&(p->data->m_death));
 }
 
-int		someone_died(t_philo *p)
+void	check_death(t_data *data)
 {
-	if (time_since(p->t_last_eat) >= p->data->t_die)
-	{
-		pthread_mutex_lock(&(p->data->m_death));
-		p->data->all_alive = 0;
-		message(p, RED"died"WHITE);
-		pthread_mutex_unlock(&(p->data->m_death));
-		return (1);
-	}
-	return (0);
-}
+	int	i;
 
-int	start_dining(t_data *data)
-{
-	pthread_mutex_t forks[data->n_philo];
-	int				i;
-
-	data->forks = init_mutex(data->n_philo, forks);
-	init_philo(data);
 	while (data->all_alive)
 	{
 		usleep(1000);
 		i = -1;
 		while (++i < data->n_philo)
 		{
-			if (someone_died(&(data->philo[i])))
+			if (time_since(data->philo[i].t_last_eat) >= data->t_die)
 			{
+				pthread_mutex_lock(&(data->m_death));
+				data->all_alive = 0;
+				message(&(data->philo[i]), RED"died"WHITE);
+				pthread_mutex_unlock(&(data->m_death));
 				break ;
 			}
 		}
-		
 	}
+}
+
+int	start_dining(t_data *data)
+{
+	pthread_mutex_t forks[data->n_philo];
+
+	data->forks = init_mutex(data, forks);
+	init_philo(data);
+	check_death(data);
 	join_threads(data);
 	destroy_mutex(data, forks);
 	return (0);
 }
+
+// int	start_dining(t_data *data)
+// {
+// 	init_mutex(data);
+// 	init_philo(data);
+// 	check_death(data);
+// 	join_threads(data);
+// 	destroy_mutex(data, data->forks);
+// 	return (0);
+// }
 
 
 

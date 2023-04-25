@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 15:55:22 by jbagger           #+#    #+#             */
-/*   Updated: 2023/04/25 15:53:27 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/04/25 16:49:04 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,14 +57,14 @@ typedef struct s_data
 
 // MAIN
 void			message(t_philo *p, char *msg);
-int				someone_died(t_philo *p);
 
 // ERROR
 void			error(char *str, t_data *data, int error_code);
 int				error_check(t_data *data, int ac, char *av[]);
 
 // INIT
-pthread_mutex_t	*init_mutex(int n, pthread_mutex_t *forks);
+pthread_mutex_t	*init_mutex(t_data *data, pthread_mutex_t *forks);
+// void			init_mutex(t_data *data);
 int				init_data(t_data *data, int ac, char *av[]);
 void			init_philo(t_data *data);
 

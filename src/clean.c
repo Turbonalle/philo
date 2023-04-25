@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:18:22 by jbagger           #+#    #+#             */
-/*   Updated: 2023/04/24 11:35:18 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/04/25 16:41:06 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	destroy_mutex(t_data *data, pthread_mutex_t *forks)
 	i = 0;
 	while (i < data->n_philo)
 	{
-		pthread_mutex_destroy(&forks[i]);
+		pthread_mutex_destroy(&(forks[i]));
 		i++;
 	}
 }
