@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 15:55:22 by jbagger           #+#    #+#             */
-/*   Updated: 2023/04/24 12:47:02 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/04/25 12:59:17 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,24 +36,28 @@ typedef struct s_philo
 	int				fork2;
 	int				times_eaten;
 	int				finished;
-	int				n;
+	int		n;
 }					t_philo;
 
 typedef struct s_data
 {
 	pthread_mutex_t	*forks;
-	pthread_mutex_t	print;
-	pthread_mutex_t	death;
+	pthread_mutex_t	m_print;
+	pthread_mutex_t	m_death;
 	t_philo			*philo;
-	long int		t_start;
+	long int	t_start;
 	int				error;
 	int				all_alive;
-	int				n_philo;
-	int				t_die;
-	int				t_eat;
-	int				t_sleep;
-	int				n_eat;
+	int		n_philo;
+	int		t_die;
+	int		t_eat;
+	int		t_sleep;
+	int		n_eat;
 }					t_data;
+
+// MAIN
+void			message(t_philo *p, char *msg);
+int				someone_died(t_philo *p);
 
 // ERROR
 void			error(char *str, t_data *data, int error_code);

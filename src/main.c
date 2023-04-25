@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 15:57:45 by jbagger           #+#    #+#             */
-/*   Updated: 2023/04/24 15:07:39 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/04/25 12:34:07 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,15 +52,45 @@ Tip:
 
 */
 
+void	message(t_philo *p, char *msg)
+{
+	pthread_mutex_lock(&(p->data->m_print));
+	printf("%-6llu %d %s\n", time_since(p->data->t_start), p->n, msg);
+	pthread_mutex_unlock(&(p->data->m_print));
+}
 
+int		someone_died(t_philo *p)
+{
+	if (time_since(p->t_last_eat) >= p->data->t_die)
+	{
+		pthread_mutex_lock(&(p->data->m_death));
+		p->data->all_alive = 0;
+		message(p, RED"died"WHITE);
+		pthread_mutex_unlock(&(p->data->m_death));
+		return (1);
+	}
+	return (0);
+}
 
 int	start_dining(t_data *data)
 {
 	pthread_mutex_t forks[data->n_philo];
+	int				i;
 
 	data->forks = init_mutex(data->n_philo, forks);
 	init_philo(data);
-	sleep(3);
+	while (data->all_alive)
+	{
+		i = -1;
+		while (++i < data->n_philo)
+		{
+			if (someone_died(&(data->philo[i])))
+			{
+				break ;
+			}
+		}
+		
+	}
 	join_threads(data);
 	destroy_mutex(data, forks);
 	return (0);
@@ -78,7 +108,5 @@ int main(int ac, char *av[])
 		return (data.error);
 	if (start_dining(&data))
 		return (data.error);
-
-	// printf(GREEN"Success!\n"WHITE);
 	return (0);
 }
