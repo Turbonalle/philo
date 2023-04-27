@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:18:22 by jbagger           #+#    #+#             */
-/*   Updated: 2023/04/27 13:14:41 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/04/27 16:06:54 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,5 @@ void	destroy_mutex(t_data *data, pthread_mutex_t *forks)
 		pthread_mutex_destroy(&(forks[i]));
 		i++;
 	}
-	pthread_mutex_destroy(&(data->m_death));
-	pthread_mutex_destroy(&(data->m_main_lock));
-	pthread_mutex_destroy(&(data->m_print));
+	pthread_mutex_destroy(&(data->m_all_alive));
 }

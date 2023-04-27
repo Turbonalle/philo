@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 13:59:34 by jbagger           #+#    #+#             */
-/*   Updated: 2023/04/27 14:06:29 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/04/27 16:13:30 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ void	ft_sleep(int ms)
 	while (time_now() - time < ms)
 		usleep(50);
 }
-
-
 
 void	p_eat(t_philo *p)
 {
@@ -43,30 +41,15 @@ void	p_eat(t_philo *p)
 	pthread_mutex_unlock(&(p->data->forks[p->right_fork]));
 }
 
-
-
 void	p_sleep(t_philo *p)
 {
 	message(p, CYAN"is sleeping"WHITE);
 	ft_sleep(p->data->t_sleep);
 }
 
-
-
 void	p_think(t_philo *p)
 {
 	message(p, YELLOW"is thinking"WHITE);
-}
-
-
-int	alive(t_philo *p)
-{
-	int all_alive;
-	
-	pthread_mutex_lock(&(p->data->m_death));
-	all_alive = p->data->all_alive;
-	pthread_mutex_unlock(&(p->data->m_death));
-	return (all_alive);
 }
 
 int	everyone_is_alive(t_philo *p)
@@ -81,14 +64,12 @@ int	everyone_is_alive(t_philo *p)
 
 void	starve_to_death(t_philo *p)
 {
-	// message(p, YELLOW"is all alone"WHITE);
 	pthread_mutex_lock(&(p->data->forks[p->left_fork]));
 	message(p, PURPLE"has taken a fork"WHITE);
-	while (alive(p))
+	while (everyone_is_alive(p))
 		usleep(50);
 	pthread_mutex_unlock(&(p->data->forks[p->left_fork]));
 }
-
 
 void *philosopher(void *philo)
 {
@@ -99,7 +80,7 @@ void *philosopher(void *philo)
 		starve_to_death(p);
 	else
 	{
-		if (p->n % 2 == 0)
+		if (p->n % 2 == 1)
 			usleep(p->data->t_eat * 1000);
 		while (everyone_is_alive(p))
 		{

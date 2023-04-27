@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 15:55:22 by jbagger           #+#    #+#             */
-/*   Updated: 2023/04/27 13:08:38 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/04/27 16:11:24 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,17 +38,15 @@ typedef struct s_philo
 	int				left_fork;
 	int				right_fork;
 	int				times_eaten;
-	int				all_alive;
 	int				finished;
+	int				all_alive;
 	int				n;
 }					t_philo;
 
 typedef struct s_data
 {
 	pthread_mutex_t	*forks;
-	pthread_mutex_t	m_print;
-	pthread_mutex_t	m_main_lock;
-	pthread_mutex_t	m_death;
+	pthread_mutex_t	m_all_alive;
 	t_philo			*philo;
 	long int		t_start;
 	int				error;
