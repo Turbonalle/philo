@@ -6,80 +6,112 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 15:57:45 by jbagger           #+#    #+#             */
-/*   Updated: 2023/04/25 16:48:48 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/04/27 14:12:51 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/philo.h"
 
 /*
-Arguments:
-	- n philo
-	- time to die
-	- time to eat
-	- time to sleep
-	- n times each philo must eat	(optional)
+FIX:
+- sanitize errors with big amount of threads
+- handle only 1 philosopher
+	- only create 1 fork?
+	- check if left and right are the same
 
-Stop when:
-	- a philo dies
-	- n times eaten is reached
-
-Print:
-	- timestamp_in_ms X has taken a fork
-	- timestamp_in_ms X is eating
-	- timestamp_in_ms X is sleeping
-	- timestamp_in_ms X is thinking
-	- timestamp_in_ms X died		(no more than 10ms after dying)
-
-
-Plan:
-- Pass in all info into struct
-- Create forks
-- Create threads
-- Set starting time	(gettimeofday)
-
-
-
-Tip:
-- usleep in every while loop?
-
-- if (n_philo % 2 == 0)
-	if (t_die >= t_eat * 2 + 10 && t_die >= t_eat + t_sleep + 10)
-		->success
-- if (n_philo % 2 == 1)
-	if (t_die >= t_eat * 3 + 10 && t_die >= t_eat + t_sleep + 10)
-		->success
-
+Bottlenecks:
+	- Philos should only check self alive
+	- Philos have their own death_mutex
 */
 
 void	message(t_philo *p, char *msg)
 {
-	pthread_mutex_lock(&(p->data->m_death));
-	printf("%-6llu %d %s\n", time_since(p->data->t_start), p->n, msg);
-	pthread_mutex_unlock(&(p->data->m_death));
+	pthread_mutex_lock(&(p->data->m_print));
+	pthread_mutex_lock(&(p->data->m_main_lock));
+	if (p->data->all_alive)
+		printf("%-6llu %d %s\n", time_since(p->data->t_start), p->n + 1, msg);
+	pthread_mutex_unlock(&(p->data->m_main_lock));
+	pthread_mutex_unlock(&(p->data->m_print));
 }
 
 void	check_death(t_data *data)
 {
 	int	i;
+	int	j;
+	int	finished_philos;
 
-	while (data->all_alive)
+	while (!(data->all_finished))
 	{
-		usleep(1000);
 		i = -1;
-		while (++i < data->n_philo)
+		while (++i < data->n_philo && data->all_alive)
 		{
-			if (time_since(data->philo[i].t_last_eat) >= data->t_die)
+			pthread_mutex_lock(&(data->philo[i].m_last_eat));
+			if (time_since(data->philo[i].t_last_eat) > data->t_die)
 			{
+				message(&(data->philo[i]), RED"died"WHITE);
+				j = -1;
+				while (++j < data->n_philo)
+				{
+					pthread_mutex_lock(&(data->philo[j].m_all_alive));
+					data->philo[j].all_alive = 0;
+					pthread_mutex_unlock(&(data->philo[j].m_all_alive));
+				}
+				pthread_mutex_lock(&(data->m_main_lock));
 				pthread_mutex_lock(&(data->m_death));
 				data->all_alive = 0;
-				message(&(data->philo[i]), RED"died"WHITE);
 				pthread_mutex_unlock(&(data->m_death));
-				break ;
+				pthread_mutex_unlock(&(data->m_main_lock));
 			}
+			pthread_mutex_unlock(&(data->philo[i].m_last_eat));
+			usleep(500);
 		}
+		if (!(data->all_alive))
+			break ;
+		i = -1;
+		finished_philos = 0;
+		while (++i < data->n_philo)
+		{
+			pthread_mutex_lock(&(data->philo[i].m_times_eaten));
+			if (data->philo[i].times_eaten >= data->n_eat)
+				finished_philos++;
+			pthread_mutex_unlock(&(data->philo[i].m_times_eaten));
+		}
+		if (finished_philos == data->n_philo)
+			data->all_finished = 1;
 	}
 }
+
+// void	check_death(t_data *data)
+// {
+// 	int	i;
+
+// 	while (!(data->all_finished))
+// 	{
+// 		i = -1;
+// 		while (++i < data->n_philo && data->all_alive)
+// 		{
+// 			pthread_mutex_lock(&(data->m_death));
+// 			if (time_since(data->philo[i].t_last_eat) > data->t_die)
+// 			{
+// 				message(&(data->philo[i]), RED"died"WHITE);
+// 				pthread_mutex_lock(&(data->m_alive));
+// 				data->all_alive = 0;
+// 				pthread_mutex_unlock(&(data->m_alive));
+// 			}
+// 			pthread_mutex_unlock(&(data->m_death));
+// 			usleep(500);
+// 		}
+// 		if (!(data->all_alive))
+// 			break ;
+// 		i = 0;
+// 		pthread_mutex_lock(&(data->m_death));
+// 		while (data->n_eat != -1 && i < data->n_philo && data->philo[i].times_eaten >= data->n_eat)
+// 			i++;
+// 		pthread_mutex_unlock(&(data->m_death));
+// 		if (i == data->n_philo)
+// 			data->all_finished = 1;
+// 	}
+// }
 
 int	start_dining(t_data *data)
 {
@@ -92,16 +124,6 @@ int	start_dining(t_data *data)
 	destroy_mutex(data, forks);
 	return (0);
 }
-
-// int	start_dining(t_data *data)
-// {
-// 	init_mutex(data);
-// 	init_philo(data);
-// 	check_death(data);
-// 	join_threads(data);
-// 	destroy_mutex(data, data->forks);
-// 	return (0);
-// }
 
 
 

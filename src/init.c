@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 13:57:19 by jbagger           #+#    #+#             */
-/*   Updated: 2023/04/25 16:48:55 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/04/27 14:09:06 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,36 +38,11 @@ pthread_mutex_t *init_mutex(t_data *data, pthread_mutex_t *forks)
 		pthread_mutex_init(&forks[i], NULL);
 		i++;
 	}
+	pthread_mutex_init(&(data->m_death), NULL);
+	pthread_mutex_init(&(data->m_main_lock), NULL);
+	pthread_mutex_init(&(data->m_print), NULL);
 	return (forks);
 }
-
-// void	init_mutex(t_data *data)
-// {
-// 	pthread_mutex_t forks[data->n_philo];
-// 	int i;
-
-// 	i = 0;
-// 	data->forks = forks;
-// 	while (i < data->n_philo)
-// 	{
-// 		pthread_mutex_init(&data->forks[i], NULL);
-// 		i++;
-// 	}
-// }
-
-void	choose_forks(t_philo *p)
-{
-	if (p->n % 2 == 0)
-		p->fork1 = p->n % p->data->n_philo;
-	else
-		p->fork1 = p->n - 1;
-	if (p->n % 2 == 0)
-		p->fork2 = p->n - 1;
-	else	
-		p->fork2 = p->n % p->data->n_philo;
-}
-
-
 
 void	init_philo(t_data *data)
 {
@@ -75,15 +50,20 @@ void	init_philo(t_data *data)
 	
 	i = -1;
 	data->all_alive = 1;
+	data->all_finished = 0;
 	start_time(data);
 	while (++i < data->n_philo)
 	{
-		usleep(10);
+		pthread_mutex_init(&(data->philo[i].m_all_alive), NULL);
+		pthread_mutex_init(&(data->philo[i].m_last_eat), NULL);
+		pthread_mutex_init(&(data->philo[i].m_times_eaten), NULL);
 		data->philo[i].data = data;
-		data->philo[i].n = i + 1;
+		data->philo[i].all_alive = 1;
+		data->philo[i].n = i;
 		data->philo[i].finished = 0;
 		data->philo[i].times_eaten = 0;
-		choose_forks(&(data->philo[i]));
+		data->philo[i].left_fork = i;
+		data->philo[i].right_fork = (i + 1) % data->n_philo;
 		data->philo[i].t_last_eat = data->t_start;
 		if (pthread_create(&(data->philo[i].thread), NULL, &philosopher, &(data->philo[i])) != 0)
 			error("Failed to create thread\n", data, 9);

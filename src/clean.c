@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:18:22 by jbagger           #+#    #+#             */
-/*   Updated: 2023/04/25 16:41:06 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/04/27 13:14:41 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,11 @@ int	join_threads(t_data *data)
 	{
 		if (pthread_join(data->philo[i].thread, NULL) != 0)
 			error("Failed to join thread\n", data, 10);
+		pthread_mutex_destroy(&(data->philo[i].m_all_alive));
+		pthread_mutex_destroy(&(data->philo[i].m_last_eat));
+		pthread_mutex_destroy(&(data->philo[i].m_times_eaten));
 	}
+	free(data->philo);
 	return (0);
 }
 
@@ -35,4 +39,7 @@ void	destroy_mutex(t_data *data, pthread_mutex_t *forks)
 		pthread_mutex_destroy(&(forks[i]));
 		i++;
 	}
+	pthread_mutex_destroy(&(data->m_death));
+	pthread_mutex_destroy(&(data->m_main_lock));
+	pthread_mutex_destroy(&(data->m_print));
 }
