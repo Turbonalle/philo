@@ -6,20 +6,11 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 15:57:45 by jbagger           #+#    #+#             */
-/*   Updated: 2023/04/27 16:12:46 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/02 16:38:49 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/philo.h"
-
-/*
-FIX:
-- sanitize errors with big amount of threads
-
-Bottlenecks:
-	- Philos should only check self alive
-	- Philos have their own death_mutex
-*/
 
 void	message(t_philo *p, char *msg)
 {
@@ -56,8 +47,8 @@ void	check_death(t_data *data)
 				pthread_mutex_unlock(&(data->m_all_alive));
 			}
 			pthread_mutex_unlock(&(data->philo[i].m_last_eat));
-			usleep(50);
 		}
+		usleep(2000);
 		if (!(data->all_alive))
 			break ;
 		i = -1;

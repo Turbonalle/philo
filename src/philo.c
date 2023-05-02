@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 13:59:34 by jbagger           #+#    #+#             */
-/*   Updated: 2023/04/27 16:13:30 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/02 15:18:12 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,17 @@ void	ft_sleep(int ms)
 
 	time = time_now();
 	while (time_now() - time < ms)
-		usleep(50);
+		usleep(1000);
 }
 
 void	p_eat(t_philo *p)
 {
 	pthread_mutex_lock(&(p->data->forks[p->left_fork]));
-	message(p, PURPLE"has taken a fork"WHITE);
+	message(p, "has taken a fork");
 	pthread_mutex_lock(&(p->data->forks[p->right_fork]));
-	message(p, PURPLE"has taken a fork"WHITE);
+	message(p, "has taken a fork");
 	pthread_mutex_lock(&(p->m_last_eat));
-	message(p, GREEN"is eating"WHITE);
+	message(p, "is eating");
 	p->t_last_eat = time_now();
 	pthread_mutex_unlock(&(p->m_last_eat));
 	ft_sleep(p->data->t_eat);
@@ -43,13 +43,13 @@ void	p_eat(t_philo *p)
 
 void	p_sleep(t_philo *p)
 {
-	message(p, CYAN"is sleeping"WHITE);
+	message(p, "is sleeping");
 	ft_sleep(p->data->t_sleep);
 }
 
 void	p_think(t_philo *p)
 {
-	message(p, YELLOW"is thinking"WHITE);
+	message(p, "is thinking");
 }
 
 int	everyone_is_alive(t_philo *p)
@@ -65,7 +65,7 @@ int	everyone_is_alive(t_philo *p)
 void	starve_to_death(t_philo *p)
 {
 	pthread_mutex_lock(&(p->data->forks[p->left_fork]));
-	message(p, PURPLE"has taken a fork"WHITE);
+	message(p, "has taken a fork");
 	while (everyone_is_alive(p))
 		usleep(50);
 	pthread_mutex_unlock(&(p->data->forks[p->left_fork]));
@@ -76,6 +76,7 @@ void *philosopher(void *philo)
 	t_philo	*p;
 	p = (t_philo*)philo;
 	
+	pthread_mutex_lock(&(p->m_start));
 	if (p->data->n_philo == 1)
 		starve_to_death(p);
 	else
@@ -91,5 +92,6 @@ void *philosopher(void *philo)
 			p_think(p);
 		}
 	}	
+	pthread_mutex_unlock(&(p->m_start));
 	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 15:55:22 by jbagger           #+#    #+#             */
-/*   Updated: 2023/04/27 16:11:24 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/02 12:41:39 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_philo
 {
 	pthread_t		thread;
 	struct s_data	*data;
+	pthread_mutex_t	m_start;
 	pthread_mutex_t	m_all_alive;
 	pthread_mutex_t	m_last_eat;
 	pthread_mutex_t	m_times_eaten;

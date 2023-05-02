@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 13:57:19 by jbagger           #+#    #+#             */
-/*   Updated: 2023/04/27 16:11:17 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/02 13:19:14 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ pthread_mutex_t *init_mutex(t_data *data, pthread_mutex_t *forks)
 
 void	init_philo_mutexes(t_data *data, int i)
 {
+	pthread_mutex_init(&(data->philo[i].m_start), NULL);
 	pthread_mutex_init(&(data->philo[i].m_all_alive), NULL);
 	pthread_mutex_init(&(data->philo[i].m_last_eat), NULL);
 	pthread_mutex_init(&(data->philo[i].m_times_eaten), NULL);
@@ -66,18 +67,20 @@ void	init_philo(t_data *data)
 	
 	data->all_alive = 1;
 	data->all_finished = 0;
-	start_time(data);
 	i = -1;
 	while (++i < data->n_philo)
 	{
 		init_philo_mutexes(data, i);
 		init_philo_data(data, i);
+		pthread_mutex_lock(&(data->philo[i].m_start));
+		if (pthread_create(&(data->philo[i].thread), NULL, &philosopher, &(data->philo[i])) != 0)
+			error("Failed to create thread\n", data, 9);
 	}
+	start_time(data);
 	i = -1;
 	while (++i < data->n_philo)
 	{
 		data->philo[i].t_last_eat = data->t_start;
-		if (pthread_create(&(data->philo[i].thread), NULL, &philosopher, &(data->philo[i])) != 0)
-			error("Failed to create thread\n", data, 9);
+		pthread_mutex_unlock(&(data->philo[i].m_start));
 	}
 }
