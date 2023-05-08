@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 09:10:23 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/08 10:44:10 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/08 14:13:08 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,8 @@ int	init_philo(t_data *data)
 				NULL, &philosopher, &(data->philo[i])) != 0)
 		{
 			error("Failed to create thread\n", data, 9);
-			join_n_threads(data, i + 1);
+			join_threads(data, i + 1);
+			destroy_forks(data, data->n_philo);
 			return (data->error);
 		}
 	}

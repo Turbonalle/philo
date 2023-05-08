@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 15:57:45 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/08 12:24:46 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/08 14:09:20 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int ac, char *av[])
 	if (init_philo(&data))
 		return (data.error);
 	check_death(&data);
-	join_threads(&data);
-	destroy_forks(&data);
+	join_threads(&data, data.n_philo);
+	destroy_forks(&data, data.n_philo);
 	return (0);
 }
