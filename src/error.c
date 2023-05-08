@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 15:57:37 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/04 16:57:05 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/08 12:20:17 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,8 @@ int	error_check(t_data *data, int ac, char *av[])
 			if (invalid_eat_input(data, av[i], i))
 				return (data->error);
 		}
+		else
+			data->n_eat = 2147483647;
 	}
 	return (data->error);
 }
