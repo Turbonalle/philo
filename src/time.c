@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:36:37 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/04 16:46:44 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/08 13:37:38 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	start_time(t_data *data)
 
 	if (gettimeofday(&time, NULL))
 	{
-		error("gettimeofday() failed\n", data, 8);
+		error("gettimeofday() failed\n", data, 10);
 		return (data->error);
 	}
 	data->t_start = time.tv_sec * 1000 + time.tv_usec / 1000;

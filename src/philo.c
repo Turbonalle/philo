@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 13:59:34 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/08 10:43:56 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/08 13:36:46 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	ft_sleep(int ms)
 {
-	long int	time;
+	long int	start;
 
-	time = time_now();
-	while (time_now() - time < ms)
+	start = time_now();
+	while (time_since(start) < ms)
 		usleep(2000);
 }
 
