@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 13:59:34 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/02 15:18:12 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/08 10:43:56 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,44 +18,13 @@ void	ft_sleep(int ms)
 
 	time = time_now();
 	while (time_now() - time < ms)
-		usleep(1000);
-}
-
-void	p_eat(t_philo *p)
-{
-	pthread_mutex_lock(&(p->data->forks[p->left_fork]));
-	message(p, "has taken a fork");
-	pthread_mutex_lock(&(p->data->forks[p->right_fork]));
-	message(p, "has taken a fork");
-	pthread_mutex_lock(&(p->m_last_eat));
-	message(p, "is eating");
-	p->t_last_eat = time_now();
-	pthread_mutex_unlock(&(p->m_last_eat));
-	ft_sleep(p->data->t_eat);
-	pthread_mutex_lock(&(p->m_times_eaten));
-	(p->times_eaten)++;
-	if (p->times_eaten == p->data->n_eat)
-		p->finished = 1;
-	pthread_mutex_unlock(&(p->m_times_eaten));
-	pthread_mutex_unlock(&(p->data->forks[p->left_fork]));
-	pthread_mutex_unlock(&(p->data->forks[p->right_fork]));
-}
-
-void	p_sleep(t_philo *p)
-{
-	message(p, "is sleeping");
-	ft_sleep(p->data->t_sleep);
-}
-
-void	p_think(t_philo *p)
-{
-	message(p, "is thinking");
+		usleep(2000);
 }
 
 int	everyone_is_alive(t_philo *p)
 {
-	int all_alive;
-	
+	int	all_alive;
+
 	pthread_mutex_lock(&(p->m_all_alive));
 	all_alive = p->all_alive;
 	pthread_mutex_unlock(&(p->m_all_alive));
@@ -71,27 +40,14 @@ void	starve_to_death(t_philo *p)
 	pthread_mutex_unlock(&(p->data->forks[p->left_fork]));
 }
 
-void *philosopher(void *philo)
+void	*philosopher(void *philo)
 {
 	t_philo	*p;
-	p = (t_philo*)philo;
-	
-	pthread_mutex_lock(&(p->m_start));
-	if (p->data->n_philo == 1)
-		starve_to_death(p);
+
+	p = (t_philo *)philo;
+	if (p->data->color == ON)
+		start_dining_color(p);
 	else
-	{
-		if (p->n % 2 == 1)
-			usleep(p->data->t_eat * 1000);
-		while (everyone_is_alive(p))
-		{
-			p_eat(p);
-			if (p->finished)
-				break ;
-			p_sleep(p);
-			p_think(p);
-		}
-	}	
-	pthread_mutex_unlock(&(p->m_start));
+		start_dining_white(p);
 	return (NULL);
 }

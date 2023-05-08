@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 13:57:19 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/02 13:19:14 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/08 09:11:00 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,61 +26,16 @@ int	init_data(t_data *data, int ac, char *av[])
 	return (data->error);
 }
 
-
-
-pthread_mutex_t *init_mutex(t_data *data, pthread_mutex_t *forks)
+int	init_mutex(t_data *data)
 {
-	int i;
+	pthread_mutex_t	*forks;
+	int				i;
 
-	i = 0;
-	while (i < data->n_philo)
-	{
+	forks = malloc(sizeof(pthread_mutex_t) * data->n_philo);
+	i = -1;
+	while (++i < data->n_philo)
 		pthread_mutex_init(&forks[i], NULL);
-		i++;
-	}
 	pthread_mutex_init(&(data->m_all_alive), NULL);
-	return (forks);
-}
-
-void	init_philo_mutexes(t_data *data, int i)
-{
-	pthread_mutex_init(&(data->philo[i].m_start), NULL);
-	pthread_mutex_init(&(data->philo[i].m_all_alive), NULL);
-	pthread_mutex_init(&(data->philo[i].m_last_eat), NULL);
-	pthread_mutex_init(&(data->philo[i].m_times_eaten), NULL);
-}
-
-void	init_philo_data(t_data *data, int i)
-{
-	data->philo[i].data = data;
-	data->philo[i].left_fork = i;
-	data->philo[i].right_fork = (i + 1) % data->n_philo;
-	data->philo[i].times_eaten = 0;
-	data->philo[i].finished = 0;
-	data->philo[i].all_alive = 1;
-	data->philo[i].n = i;
-}
-
-void	init_philo(t_data *data)
-{
-	int i;
-	
-	data->all_alive = 1;
-	data->all_finished = 0;
-	i = -1;
-	while (++i < data->n_philo)
-	{
-		init_philo_mutexes(data, i);
-		init_philo_data(data, i);
-		pthread_mutex_lock(&(data->philo[i].m_start));
-		if (pthread_create(&(data->philo[i].thread), NULL, &philosopher, &(data->philo[i])) != 0)
-			error("Failed to create thread\n", data, 9);
-	}
-	start_time(data);
-	i = -1;
-	while (++i < data->n_philo)
-	{
-		data->philo[i].t_last_eat = data->t_start;
-		pthread_mutex_unlock(&(data->philo[i].m_start));
-	}
+	data->forks = forks;
+	return (data->error);
 }

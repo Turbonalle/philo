@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 15:55:22 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/02 12:41:39 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/08 10:41:59 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@
 # define BLUE "\033[34m"
 # define PURPLE "\033[35m"
 # define CYAN "\033[36m"
+# define ON 1
+# define OFF 0
 
 typedef struct s_philo
 {
@@ -51,6 +53,7 @@ typedef struct s_data
 	t_philo			*philo;
 	long int		t_start;
 	int				error;
+	int				color;
 	int				all_alive;
 	int				all_finished;
 	int				n_philo;
@@ -61,28 +64,44 @@ typedef struct s_data
 }					t_data;
 
 // MAIN
-void			message(t_philo *p, char *msg);
+void		message(t_philo *p, char *msg);
+
+// DEATH CHECK
+void		check_death(t_data *data);
 
 // ERROR
-void			error(char *str, t_data *data, int error_code);
-int				error_check(t_data *data, int ac, char *av[]);
+void		error(char *str, t_data *data, int error_code);
+int			error_check(t_data *data, int ac, char *av[]);
 
 // INIT
-pthread_mutex_t	*init_mutex(t_data *data, pthread_mutex_t *forks);
-// void			init_mutex(t_data *data);
-int				init_data(t_data *data, int ac, char *av[]);
-void			init_philo(t_data *data);
+int			init_mutex(t_data *data);
+int			init_data(t_data *data, int ac, char *av[]);
+int			init_philo(t_data *data);
 
 // PHILO
-void			*philosopher(void *philo);
+void		*philosopher(void *philo);
+void		ft_sleep(int ms);
+int			everyone_is_alive(t_philo *p);
+void		starve_to_death(t_philo *p);
+
+// DINING
+void		start_dining_color(t_philo *p);
+void		start_dining_white(t_philo *p);
 
 // CLEAN
-int				join_threads(t_data *data);
-void			destroy_mutex(t_data *data, pthread_mutex_t *forks);
+int			join_n_threads(t_data *data, int n);
+int			join_threads(t_data *data);
+void		destroy_forks(t_data *data);
 
 // TIME
-int				start_time(t_data *data);
-long long		time_since(long long start);
-long long		time_now(void);
+int			start_time(t_data *data);
+long int	time_since(long int start);
+long int	time_now(void);
+
+// UTILS
+int			ft_atoi(const char *str);
+size_t		ft_strlen(const char *str);
+int			ft_strncmp(const char *s1, const char *s2, size_t n);
+void		message(t_philo *p, char *msg);
 
 #endif
