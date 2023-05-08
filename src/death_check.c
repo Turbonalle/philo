@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 17:52:32 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/08 12:20:57 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/08 14:21:24 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	check_finished_philosophers(t_data *data)
 		else
 		{
 			pthread_mutex_unlock(&(data->philo[i].m_times_eaten));
-			break ;	
+			break ;
 		}
 	}
 	if (finished_philos == data->n_philo)
