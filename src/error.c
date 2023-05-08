@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 15:57:37 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/08 12:20:17 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/08 16:20:06 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	invalid_eat_input(t_data *data, char *input, int i)
 	int	n;
 
 	n = ft_atoi(input);
-	if (n < 0 || (n == 0 && ft_strncmp(input, "0", 1) != 0))
+	if (n <= 0)
 		error("Only positive numbers allowed\n", data, 2 + i);
 	return (data->error);
 }

@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 10:36:35 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/08 10:43:45 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/08 16:21:07 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	start_dining_white(t_philo *p)
 		starve_to_death(p);
 	else
 	{
+		message(p, "is thinking");
 		if (p->n % 2 == 1)
 			usleep(p->data->t_eat * 1000);
 		while (everyone_is_alive(p))
