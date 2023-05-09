@@ -7,7 +7,6 @@ FILES =		clean.c \
 			init.c \
 			init_philo.c \
 			main.c \
-			message.c \
 			philo.c \
 			time.c \
 			utils.c
@@ -29,11 +28,11 @@ $(OBJ_PATH):
 	@mkdir $(OBJ_PATH)
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c | $(OBJ_PATH)
-	# @cc $(FLAGS) -c $< -o $@
+#	@cc $(FLAGS) -c $< -o $@
 	@cc $(SANITIZE) $(FLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
-	# @cc $(OBJ) -o $(NAME) -I $(HEADER)
+#	@cc $(OBJ) -o $(NAME) -I $(HEADER)
 	@cc $(SANITIZE) $(OBJ) -o $(NAME) -I $(HEADER)
 	@clear
 
