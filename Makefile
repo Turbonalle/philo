@@ -7,6 +7,7 @@ FILES =		clean.c \
 			init.c \
 			init_philo.c \
 			main.c \
+			message.c \
 			philo.c \
 			time.c \
 			utils.c

@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 10:37:59 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/09 09:24:54 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/09 09:56:31 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,8 @@ void	eat_color(t_philo *p)
 	pthread_mutex_lock(&(p->m_last_eat));
 	if (i_am_dead(p))
 	{
-		message(p, "I AM DEAD");
-		// tell_main(p);
-		// tell_everyone_else(p);
+		message(p, RED"died"WHITE);
+		tell_main(p);
 		return ;
 	}
 	message(p, GREEN"is eating"WHITE);

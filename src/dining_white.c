@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 10:36:35 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/08 16:21:07 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/09 09:56:29 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,12 @@ void	eat_white(t_philo *p)
 	pthread_mutex_lock(&(p->data->forks[p->right_fork]));
 	message(p, "has taken a fork");
 	pthread_mutex_lock(&(p->m_last_eat));
+	if (i_am_dead(p))
+	{
+		message(p, "died");
+		tell_main(p);
+		return ;
+	}
 	message(p, "is eating");
 	p->t_last_eat = time_now();
 	pthread_mutex_unlock(&(p->m_last_eat));
