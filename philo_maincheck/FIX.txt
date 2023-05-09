@@ -1,0 +1,3 @@
+PHILOCHECK:
+
+If philo reaches "I AM DEAD" before main finds someone dead, program won't quit.
