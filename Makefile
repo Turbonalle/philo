@@ -18,7 +18,7 @@ SRC = $(addprefix $(SRC_PATH)/,$(FILES))
 OBJ = $(addprefix $(OBJ_PATH)/,$(FILES:.c=.o))
 
 FLAGS = -Wall -Wextra -Werror 
-#SANITIZE = -g -fsanitize=thread -static-libsan
+SANITIZE = -g -fsanitize=thread -static-libsan
 
 .PHONY: all clean fclean re
 
@@ -28,12 +28,12 @@ $(OBJ_PATH):
 	@mkdir $(OBJ_PATH)
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c | $(OBJ_PATH)
-	@cc $(FLAGS) -c $< -o $@
-#	@cc $(SANITIZE) $(FLAGS) -c $< -o $@
+	# @cc $(FLAGS) -c $< -o $@
+	@cc $(SANITIZE) $(FLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
-	@cc $(OBJ) -o $(NAME) -I $(HEADER)
-#	@cc $(SANITIZE) $(OBJ) -o $(NAME) -I $(HEADER)
+	# @cc $(OBJ) -o $(NAME) -I $(HEADER)
+	@cc $(SANITIZE) $(OBJ) -o $(NAME) -I $(HEADER)
 	@clear
 
 clean:

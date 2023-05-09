@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 15:57:45 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/08 14:09:20 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/09 08:47:03 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	main(int ac, char *av[])
 {
 	t_data	data;
 
-	data.color = OFF;
+	data.color = ON;
 	if (error_check(&data, ac, av))
 		return (data.error);
 	if (init_data(&data, ac, av))

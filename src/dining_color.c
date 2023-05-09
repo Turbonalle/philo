@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 10:37:59 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/08 16:19:22 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/09 09:24:54 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,13 @@ void	eat_color(t_philo *p)
 	pthread_mutex_lock(&(p->data->forks[p->right_fork]));
 	message(p, PURPLE"has taken a fork"WHITE);
 	pthread_mutex_lock(&(p->m_last_eat));
+	if (i_am_dead(p))
+	{
+		message(p, "I AM DEAD");
+		// tell_main(p);
+		// tell_everyone_else(p);
+		return ;
+	}
 	message(p, GREEN"is eating"WHITE);
 	p->t_last_eat = time_now();
 	pthread_mutex_unlock(&(p->m_last_eat));
@@ -45,10 +52,12 @@ void	start_dining_color(t_philo *p)
 		while (everyone_is_alive(p))
 		{
 			eat_color(p);
-			if (p->finished)
+			if (p->finished || !everyone_is_alive(p))
 				break ;
 			message(p, CYAN"is sleeping"WHITE);
 			ft_sleep(p->data->t_sleep);
+			if (!everyone_is_alive(p))
+				break ;
 			message(p, YELLOW"is thinking"WHITE);
 		}
 	}	
