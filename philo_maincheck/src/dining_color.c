@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 10:37:59 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/10 13:18:41 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/10 15:34:40 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,12 @@ void	eat_color(t_philo *p)
 	pthread_mutex_lock(&(p->m_last_eat));
 	if (i_am_dead(p))
 	{
-		message(p, "I AM DEAD");
-		// tell_main(p);
-		// tell_philos(p);
+		pthread_mutex_lock(&(p->m_all_alive));
+		p->all_alive = 0;
+		pthread_mutex_unlock(&(p->m_all_alive));
+		pthread_mutex_unlock(&(p->m_times_eaten));
+		pthread_mutex_unlock(&(p->data->forks[p->left_fork]));
+		pthread_mutex_unlock(&(p->data->forks[p->right_fork]));
 		return ;
 	}
 	message(p, GREEN"is eating"WHITE);
@@ -63,3 +66,13 @@ void	start_dining_color(t_philo *p)
 	}	
 	pthread_mutex_unlock(&(p->m_start));
 }
+
+
+/*
+
+philo checks own death
+philo checks if all alive
+philo tells everyone that he died
+philo prints death
+
+*/

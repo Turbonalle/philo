@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 15:55:22 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/10 13:16:31 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/10 15:42:30 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void		message(t_philo *p, char *msg);
 // DEATH CHECK
 int			i_am_dead(t_philo *p);
 void		tell_main(t_philo *p);
-void		tell_philos(t_philo *p);
+void		tell_philos(t_data *data);
 void		check_death(t_data *data);
 
 // ERROR
