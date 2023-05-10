@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 15:55:22 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/09 09:59:03 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/10 15:42:30 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,13 +63,14 @@ typedef struct s_data
 	int				n_eat;
 }					t_data;
 
-// MESSAGE
+// MAIN
+void		death_message(t_philo *p, char *msg);
 void		message(t_philo *p, char *msg);
-void		tell_main(t_philo *p);
-void		tell_everyone(t_data *data);
 
 // DEATH CHECK
 int			i_am_dead(t_philo *p);
+void		tell_main(t_philo *p);
+void		tell_philos(t_data *data);
 void		check_death(t_data *data);
 
 // ERROR
@@ -104,5 +105,6 @@ long int	time_now(void);
 int			ft_atoi(const char *str);
 size_t		ft_strlen(const char *str);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
+void		message(t_philo *p, char *msg);
 
 #endif

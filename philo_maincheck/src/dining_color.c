@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 10:37:59 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/10 15:34:40 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/10 17:13:16 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,13 +66,3 @@ void	start_dining_color(t_philo *p)
 	}	
 	pthread_mutex_unlock(&(p->m_start));
 }
-
-
-/*
-
-philo checks own death
-philo checks if all alive
-philo tells everyone that he died
-philo prints death
-
-*/
