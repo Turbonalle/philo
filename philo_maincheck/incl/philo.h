@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 15:55:22 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/09 14:17:23 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/10 13:16:31 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ typedef struct s_data
 }					t_data;
 
 // MAIN
+void		death_message(t_philo *p, char *msg);
 void		message(t_philo *p, char *msg);
 
 // DEATH CHECK

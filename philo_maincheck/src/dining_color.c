@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 10:37:59 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/09 14:17:12 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/10 13:18:41 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	eat_color(t_philo *p)
 	if (i_am_dead(p))
 	{
 		message(p, "I AM DEAD");
-		tell_main(p);
+		// tell_main(p);
 		// tell_philos(p);
 		return ;
 	}

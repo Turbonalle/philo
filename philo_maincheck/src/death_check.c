@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 17:52:32 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/09 14:25:07 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/10 13:17:10 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,6 @@ void	is_philosopher_dead(t_data *data, int i)
 	pthread_mutex_lock(&(data->philo[i].m_last_eat));
 	if (time_since(data->philo[i].t_last_eat) > data->t_die)
 	{
-		if (data->color == ON)
-			message(&(data->philo[i]), RED"died"WHITE);
-		else
-			message(&(data->philo[i]), "died");
 		j = -1;
 		while (++j < data->n_philo)
 		{
@@ -77,6 +73,11 @@ void	is_philosopher_dead(t_data *data, int i)
 		pthread_mutex_lock(&(data->m_all_alive));
 		data->all_alive = 0;
 		pthread_mutex_unlock(&(data->m_all_alive));
+		usleep(1000);
+		if (data->color == ON)
+			death_message(&(data->philo[i]), RED"died"WHITE);
+		else
+			death_message(&(data->philo[i]), "died");
 	}
 	pthread_mutex_unlock(&(data->philo[i].m_last_eat));
 }
