@@ -1,39 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   time.c                                             :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/20 14:36:37 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/08 13:37:38 by jbagger          ###   ########.fr       */
+/*   Created: 2023/04/14 15:57:45 by jbagger           #+#    #+#             */
+/*   Updated: 2023/05/18 11:08:43 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/philo.h"
 
-int	start_time(t_data *data)
+int	main(int ac, char *av[])
 {
-	struct timeval	time;
+	t_data	data;
 
-	if (gettimeofday(&time, NULL))
-	{
-		error("gettimeofday() failed\n", data, 10);
-		return (data->error);
-	}
-	data->t_start = time.tv_sec * 1000 + time.tv_usec / 1000;
+	data.color = ON;
+	if (error_check(&data, ac, av))
+		return (data.error);
+	if (init_data(&data, ac, av))
+		return (data.error);
+	if (init_mutex(&data))
+		return (data.error);
+	if (init_philo(&data))
+		return (data.error);
+	check_death(&data);
+	join_threads(&data, data.n_philo);
+	destroy_forks(&data, data.n_philo);
 	return (0);
-}
-
-long int	time_since(long int start)
-{
-	return (time_now() - start);
-}
-
-long int	time_now(void)
-{
-	struct timeval	time;
-
-	gettimeofday(&time, NULL);
-	return (time.tv_sec * 1000 + time.tv_usec / 1000);
 }

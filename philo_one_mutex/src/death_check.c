@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 17:52:32 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/10 17:13:38 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/18 14:52:44 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int	everyone_is_alive(t_philo *p)
 {
 	int	all_alive;
 
-	pthread_mutex_lock(&(p->m_all_alive));
+	pthread_mutex_lock(&(p->data->game_mutex));
 	all_alive = p->all_alive;
-	pthread_mutex_unlock(&(p->m_all_alive));
+	pthread_mutex_unlock(&(p->data->game_mutex));
 	return (all_alive);
 }
 
@@ -35,9 +35,9 @@ int		i_am_dead(t_philo *p)
 
 void	tell_main(t_philo *p)
 {
-	pthread_mutex_lock(&(p->m_all_alive));
+	pthread_mutex_lock(&(p->data->game_mutex));
 	p->all_alive = 0;
-	pthread_mutex_unlock(&(p->m_all_alive));
+	pthread_mutex_unlock(&(p->data->game_mutex));
 }
 
 void	tell_philos(t_data *data)
@@ -47,9 +47,7 @@ void	tell_philos(t_data *data)
 	i = -1;
 	while (++i < data->n_philo)
 	{
-		pthread_mutex_lock(&(data->philo[i].m_all_alive));
 		data->philo[i].all_alive = 0;
-		pthread_mutex_unlock(&(data->philo[i].m_all_alive));
 	}
 }
 
@@ -60,21 +58,21 @@ void	is_philosopher_dead(t_data *data, int i)
 {
 	long int	time_since_meal;
 
-	pthread_mutex_lock(&(data->philo[i].m_last_eat));
+	pthread_mutex_lock(&(data->philo[i].p_mutex));
+	pthread_mutex_lock(&(data->game_mutex));
 	time_since_meal = time_since(data->philo[i].t_last_eat);
-	pthread_mutex_unlock(&(data->philo[i].m_last_eat));
 	if (time_since_meal > data->t_die)
 	{
 		tell_philos(data);
-		pthread_mutex_lock(&(data->m_all_alive));
 		data->all_alive = 0;
-		pthread_mutex_unlock(&(data->m_all_alive));
 		usleep(1000);
 		if (data->color == ON)
 			death_message(&(data->philo[i]), RED"died"WHITE);
 		else
 			death_message(&(data->philo[i]), "died");
 	}
+	pthread_mutex_unlock(&(data->game_mutex));
+	pthread_mutex_unlock(&(data->philo[i].p_mutex));
 }
 
 void	check_finished_philosophers(t_data *data)
@@ -86,15 +84,15 @@ void	check_finished_philosophers(t_data *data)
 	i = -1;
 	while (++i < data->n_philo)
 	{
-		pthread_mutex_lock(&(data->philo[i].m_times_eaten));
+		pthread_mutex_lock(&(data->game_mutex));
 		if (data->philo[i].times_eaten >= data->n_eat)
 		{
 			finished_philos++;
-			pthread_mutex_unlock(&(data->philo[i].m_times_eaten));
+			pthread_mutex_unlock(&(data->game_mutex));
 		}
 		else
 		{
-			pthread_mutex_unlock(&(data->philo[i].m_times_eaten));
+			pthread_mutex_unlock(&(data->game_mutex));
 			break ;
 		}
 	}
@@ -110,23 +108,17 @@ void	check_death(t_data *data)
 	int	all_alive;
 	int	i;
 
-	while (!(data->all_finished))
+	while (data->all_alive)
 	{
 		i = -1;
 		while (++i < data->n_philo)
 		{
-			pthread_mutex_lock(&(data->m_all_alive));
-			all_alive = data->all_alive;
-			pthread_mutex_unlock(&(data->m_all_alive));
 			if (all_alive)
 				is_philosopher_dead(data, i);
 		}
-		pthread_mutex_lock(&(data->m_all_alive));
-		all_alive = data->all_alive;
-		pthread_mutex_unlock(&(data->m_all_alive));
-		if (!all_alive)
-			break ;
 		check_finished_philosophers(data);
+		if (data->all_finished)
+			return ;
 		usleep(2000);
 	}
 }

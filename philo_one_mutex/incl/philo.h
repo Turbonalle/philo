@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 15:55:22 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/10 15:42:30 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/18 12:41:56 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,8 @@
 typedef struct s_philo
 {
 	pthread_t		thread;
+	pthread_mutex_t	p_mutex;
 	struct s_data	*data;
-	pthread_mutex_t	m_start;
-	pthread_mutex_t	m_all_alive;
-	pthread_mutex_t	m_last_eat;
-	pthread_mutex_t	m_times_eaten;
 	long int		t_last_eat;
 	int				left_fork;
 	int				right_fork;
@@ -49,7 +46,7 @@ typedef struct s_philo
 typedef struct s_data
 {
 	pthread_mutex_t	*forks;
-	pthread_mutex_t	m_all_alive;
+	pthread_mutex_t	game_mutex;
 	t_philo			*philo;
 	long int		t_start;
 	int				error;
@@ -90,7 +87,7 @@ void		starve_to_death(t_philo *p);
 
 // DINING
 void		start_dining_color(t_philo *p);
-void		start_dining_white(t_philo *p);
+// void		start_dining_white(t_philo *p);
 
 // CLEAN
 int			join_threads(t_data *data, int n);

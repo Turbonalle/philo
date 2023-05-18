@@ -1,56 +1,66 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dining_white.c                                     :+:      :+:    :+:   */
+/*   dining_color.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/08 10:36:35 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/08 16:21:07 by jbagger          ###   ########.fr       */
+/*   Created: 2023/05/08 10:37:59 by jbagger           #+#    #+#             */
+/*   Updated: 2023/05/18 14:42:11 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/philo.h"
 
-void	eat_white(t_philo *p)
+void	eat_color(t_philo *p)
 {
 	pthread_mutex_lock(&(p->data->forks[p->left_fork]));
-	message(p, "has taken a fork");
+	message(p, PURPLE"has taken a fork"WHITE);
 	pthread_mutex_lock(&(p->data->forks[p->right_fork]));
-	message(p, "has taken a fork");
-	pthread_mutex_lock(&(p->m_last_eat));
-	message(p, "is eating");
+	message(p, PURPLE"has taken a fork"WHITE);
+	pthread_mutex_lock(&(p->p_mutex));
+	if (i_am_dead(p))
+	{
+		p->all_alive = 0;
+		pthread_mutex_unlock(&(p->data->game_mutex));
+		pthread_mutex_unlock(&(p->data->forks[p->left_fork]));
+		pthread_mutex_unlock(&(p->data->forks[p->right_fork]));
+		return ;
+	}
+	message(p, GREEN"is eating"WHITE);
 	p->t_last_eat = time_now();
-	pthread_mutex_unlock(&(p->m_last_eat));
+	pthread_mutex_unlock(&(p->p_mutex));
 	ft_sleep(p->data->t_eat);
-	pthread_mutex_lock(&(p->m_times_eaten));
+	pthread_mutex_lock(&(p->data->game_mutex));
 	(p->times_eaten)++;
 	if (p->times_eaten == p->data->n_eat)
 		p->finished = 1;
-	pthread_mutex_unlock(&(p->m_times_eaten));
+	pthread_mutex_unlock(&(p->data->game_mutex));
 	pthread_mutex_unlock(&(p->data->forks[p->left_fork]));
 	pthread_mutex_unlock(&(p->data->forks[p->right_fork]));
 }
 
-void	start_dining_white(t_philo *p)
+void	start_dining_color(t_philo *p)
 {
-	pthread_mutex_lock(&(p->m_start));
+	pthread_mutex_lock(&(p->data->game_mutex));
+	pthread_mutex_unlock(&(p->data->game_mutex));
 	if (p->data->n_philo == 1)
 		starve_to_death(p);
 	else
 	{
-		message(p, "is thinking");
+		message(p, YELLOW"is thinking"WHITE);
 		if (p->n % 2 == 1)
 			usleep(p->data->t_eat * 1000);
-		while (everyone_is_alive(p))
+		while (1)
 		{
-			eat_white(p);
-			if (p->finished)
+			eat_color(p);
+			if (p->finished || !everyone_is_alive(p))
 				break ;
-			message(p, "is sleeping");
+			message(p, CYAN"is sleeping"WHITE);
 			ft_sleep(p->data->t_sleep);
-			message(p, "is thinking");
+			if (!everyone_is_alive(p))
+				break ;
+			message(p, YELLOW"is thinking"WHITE);
 		}
 	}	
-	pthread_mutex_unlock(&(p->m_start));
 }

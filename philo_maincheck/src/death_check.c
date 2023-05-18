@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 17:52:32 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/10 17:13:38 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/18 10:45:09 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,7 +125,7 @@ void	check_death(t_data *data)
 		all_alive = data->all_alive;
 		pthread_mutex_unlock(&(data->m_all_alive));
 		if (!all_alive)
-			break ;
+			return ;
 		check_finished_philosophers(data);
 		usleep(2000);
 	}

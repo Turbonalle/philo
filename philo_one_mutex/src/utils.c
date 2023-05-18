@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 10:51:43 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/10 13:16:50 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/18 11:19:59 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 void	death_message(t_philo *p, char *msg)
 {
-	pthread_mutex_lock(&(p->data->m_all_alive));
+	pthread_mutex_lock(&(p->data->game_mutex));
 	printf("%-6ld %d %s\n", time_since(p->data->t_start), p->n + 1, msg);
-	pthread_mutex_unlock(&(p->data->m_all_alive));
+	pthread_mutex_unlock(&(p->data->game_mutex));
 }
 
 void	message(t_philo *p, char *msg)
 {
-	pthread_mutex_lock(&(p->data->m_all_alive));
-	if (p->data->all_alive)
+	pthread_mutex_lock(&(p->data->game_mutex));
+	if (p->all_alive)
 		printf("%-6ld %d %s\n", time_since(p->data->t_start), p->n + 1, msg);
-	pthread_mutex_unlock(&(p->data->m_all_alive));
+	pthread_mutex_unlock(&(p->data->game_mutex));
 }
 
 int	ft_atoi(const char *str)

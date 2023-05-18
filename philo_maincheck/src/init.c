@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 13:57:19 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/08 14:09:45 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/17 16:27:40 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,11 @@ int	init_mutex(t_data *data)
 		}
 	}
 	if (pthread_mutex_init(&(data->m_all_alive), NULL) != 0)
+	{
+		error("Failed initializing mutex\n", data, 10);
+		return (data->error);
+	}
+	if (pthread_mutex_init(&(data->m_start), NULL) != 0)
 	{
 		error("Failed initializing mutex\n", data, 10);
 		return (data->error);

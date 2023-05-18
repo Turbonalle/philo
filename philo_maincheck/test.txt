@@ -1,0 +1,1007 @@
+0      1 [33mis thinking[0m
+0      1 [35mhas taken a fork[0m
+0      1 [35mhas taken a fork[0m
+0      1 [32mis eating[0m
+6      3 [33mis thinking[0m
+6      3 [35mhas taken a fork[0m
+6      3 [35mhas taken a fork[0m
+6      3 [32mis eating[0m
+6      10 [33mis thinking[0m
+6      11 [33mis thinking[0m
+6      12 [33mis thinking[0m
+6      13 [33mis thinking[0m
+6      14 [33mis thinking[0m
+6      15 [33mis thinking[0m
+6      16 [33mis thinking[0m
+6      17 [33mis thinking[0m
+6      18 [33mis thinking[0m
+6      19 [33mis thinking[0m
+6      20 [33mis thinking[0m
+6      21 [33mis thinking[0m
+6      22 [33mis thinking[0m
+6      23 [33mis thinking[0m
+6      24 [33mis thinking[0m
+6      25 [33mis thinking[0m
+6      26 [33mis thinking[0m
+6      27 [33mis thinking[0m
+6      28 [33mis thinking[0m
+6      29 [33mis thinking[0m
+6      30 [33mis thinking[0m
+6      31 [33mis thinking[0m
+6      32 [33mis thinking[0m
+6      33 [33mis thinking[0m
+6      34 [33mis thinking[0m
+6      35 [33mis thinking[0m
+6      36 [33mis thinking[0m
+6      37 [33mis thinking[0m
+6      38 [33mis thinking[0m
+6      39 [33mis thinking[0m
+6      40 [33mis thinking[0m
+6      41 [33mis thinking[0m
+6      42 [33mis thinking[0m
+6      43 [33mis thinking[0m
+6      44 [33mis thinking[0m
+6      45 [33mis thinking[0m
+6      46 [33mis thinking[0m
+6      47 [33mis thinking[0m
+6      48 [33mis thinking[0m
+6      49 [33mis thinking[0m
+6      50 [33mis thinking[0m
+6      51 [33mis thinking[0m
+6      51 [35mhas taken a fork[0m
+6      51 [35mhas taken a fork[0m
+6      51 [32mis eating[0m
+6      55 [33mis thinking[0m
+6      56 [33mis thinking[0m
+6      57 [33mis thinking[0m
+6      58 [33mis thinking[0m
+6      59 [33mis thinking[0m
+6      60 [33mis thinking[0m
+6      61 [33mis thinking[0m
+6      62 [33mis thinking[0m
+6      63 [33mis thinking[0m
+6      64 [33mis thinking[0m
+6      65 [33mis thinking[0m
+6      66 [33mis thinking[0m
+6      67 [33mis thinking[0m
+6      68 [33mis thinking[0m
+6      69 [33mis thinking[0m
+6      70 [33mis thinking[0m
+6      71 [33mis thinking[0m
+6      72 [33mis thinking[0m
+6      73 [33mis thinking[0m
+6      74 [33mis thinking[0m
+6      75 [33mis thinking[0m
+6      76 [33mis thinking[0m
+6      77 [33mis thinking[0m
+6      78 [33mis thinking[0m
+6      79 [33mis thinking[0m
+7      80 [33mis thinking[0m
+7      81 [33mis thinking[0m
+7      82 [33mis thinking[0m
+7      83 [33mis thinking[0m
+7      84 [33mis thinking[0m
+7      85 [33mis thinking[0m
+7      86 [33mis thinking[0m
+7      87 [33mis thinking[0m
+7      88 [33mis thinking[0m
+7      89 [33mis thinking[0m
+7      90 [33mis thinking[0m
+7      91 [33mis thinking[0m
+7      92 [33mis thinking[0m
+7      93 [33mis thinking[0m
+7      93 [35mhas taken a fork[0m
+7      93 [35mhas taken a fork[0m
+7      95 [33mis thinking[0m
+7      97 [33mis thinking[0m
+7      98 [33mis thinking[0m
+7      99 [33mis thinking[0m
+7      100 [33mis thinking[0m
+7      101 [33mis thinking[0m
+7      102 [33mis thinking[0m
+7      103 [33mis thinking[0m
+7      104 [33mis thinking[0m
+7      105 [33mis thinking[0m
+7      106 [33mis thinking[0m
+7      107 [33mis thinking[0m
+7      108 [33mis thinking[0m
+7      109 [33mis thinking[0m
+7      110 [33mis thinking[0m
+7      111 [33mis thinking[0m
+7      112 [33mis thinking[0m
+7      113 [33mis thinking[0m
+7      114 [33mis thinking[0m
+7      115 [33mis thinking[0m
+7      116 [33mis thinking[0m
+7      117 [33mis thinking[0m
+7      118 [33mis thinking[0m
+7      119 [33mis thinking[0m
+7      120 [33mis thinking[0m
+7      121 [33mis thinking[0m
+7      122 [33mis thinking[0m
+7      123 [33mis thinking[0m
+7      124 [33mis thinking[0m
+7      125 [33mis thinking[0m
+7      126 [33mis thinking[0m
+7      127 [33mis thinking[0m
+7      128 [33mis thinking[0m
+7      129 [33mis thinking[0m
+7      130 [33mis thinking[0m
+7      131 [33mis thinking[0m
+7      132 [33mis thinking[0m
+7      133 [33mis thinking[0m
+7      134 [33mis thinking[0m
+7      135 [33mis thinking[0m
+7      136 [33mis thinking[0m
+7      137 [33mis thinking[0m
+7      138 [33mis thinking[0m
+7      139 [33mis thinking[0m
+7      140 [33mis thinking[0m
+7      141 [33mis thinking[0m
+7      142 [33mis thinking[0m
+7      143 [33mis thinking[0m
+7      144 [33mis thinking[0m
+7      145 [33mis thinking[0m
+7      146 [33mis thinking[0m
+7      147 [33mis thinking[0m
+7      148 [33mis thinking[0m
+7      149 [33mis thinking[0m
+7      150 [33mis thinking[0m
+7      151 [33mis thinking[0m
+7      152 [33mis thinking[0m
+7      153 [33mis thinking[0m
+7      154 [33mis thinking[0m
+7      155 [33mis thinking[0m
+7      156 [33mis thinking[0m
+7      157 [33mis thinking[0m
+7      158 [33mis thinking[0m
+7      159 [33mis thinking[0m
+7      160 [33mis thinking[0m
+7      161 [33mis thinking[0m
+7      162 [33mis thinking[0m
+8      163 [33mis thinking[0m
+8      164 [33mis thinking[0m
+8      165 [33mis thinking[0m
+8      166 [33mis thinking[0m
+8      167 [33mis thinking[0m
+8      168 [33mis thinking[0m
+8      169 [33mis thinking[0m
+8      170 [33mis thinking[0m
+8      171 [33mis thinking[0m
+8      172 [33mis thinking[0m
+8      173 [33mis thinking[0m
+8      174 [33mis thinking[0m
+8      175 [33mis thinking[0m
+8      176 [33mis thinking[0m
+8      177 [33mis thinking[0m
+8      178 [33mis thinking[0m
+8      179 [33mis thinking[0m
+8      180 [33mis thinking[0m
+8      181 [33mis thinking[0m
+8      182 [33mis thinking[0m
+8      183 [33mis thinking[0m
+8      184 [33mis thinking[0m
+8      185 [33mis thinking[0m
+8      186 [33mis thinking[0m
+8      187 [33mis thinking[0m
+8      188 [33mis thinking[0m
+8      189 [33mis thinking[0m
+8      190 [33mis thinking[0m
+8      191 [33mis thinking[0m
+8      192 [33mis thinking[0m
+8      193 [33mis thinking[0m
+8      194 [33mis thinking[0m
+8      195 [33mis thinking[0m
+8      196 [33mis thinking[0m
+8      197 [33mis thinking[0m
+8      198 [33mis thinking[0m
+8      199 [33mis thinking[0m
+8      200 [33mis thinking[0m
+8      2 [33mis thinking[0m
+8      5 [33mis thinking[0m
+8      6 [33mis thinking[0m
+8      4 [33mis thinking[0m
+8      8 [33mis thinking[0m
+8      9 [33mis thinking[0m
+8      11 [35mhas taken a fork[0m
+8      11 [35mhas taken a fork[0m
+8      11 [32mis eating[0m
+8      17 [35mhas taken a fork[0m
+8      17 [35mhas taken a fork[0m
+8      17 [32mis eating[0m
+8      23 [35mhas taken a fork[0m
+8      23 [35mhas taken a fork[0m
+8      23 [32mis eating[0m
+8      29 [35mhas taken a fork[0m
+8      29 [35mhas taken a fork[0m
+8      29 [32mis eating[0m
+8      35 [35mhas taken a fork[0m
+8      35 [35mhas taken a fork[0m
+8      35 [32mis eating[0m
+8      41 [35mhas taken a fork[0m
+8      41 [35mhas taken a fork[0m
+8      41 [32mis eating[0m
+8      47 [35mhas taken a fork[0m
+8      47 [35mhas taken a fork[0m
+8      47 [32mis eating[0m
+8      53 [33mis thinking[0m
+8      54 [33mis thinking[0m
+8      55 [35mhas taken a fork[0m
+8      55 [35mhas taken a fork[0m
+8      55 [32mis eating[0m
+8      61 [35mhas taken a fork[0m
+8      61 [35mhas taken a fork[0m
+8      61 [32mis eating[0m
+8      67 [35mhas taken a fork[0m
+8      67 [35mhas taken a fork[0m
+8      67 [32mis eating[0m
+8      73 [35mhas taken a fork[0m
+8      73 [35mhas taken a fork[0m
+8      73 [32mis eating[0m
+8      79 [35mhas taken a fork[0m
+8      79 [35mhas taken a fork[0m
+8      81 [35mhas taken a fork[0m
+8      81 [35mhas taken a fork[0m
+8      81 [32mis eating[0m
+8      89 [35mhas taken a fork[0m
+8      89 [35mhas taken a fork[0m
+8      89 [32mis eating[0m
+8      94 [33mis thinking[0m
+8      96 [33mis thinking[0m
+8      95 [35mhas taken a fork[0m
+8      95 [35mhas taken a fork[0m
+8      95 [32mis eating[0m
+8      101 [35mhas taken a fork[0m
+8      101 [35mhas taken a fork[0m
+8      101 [32mis eating[0m
+8      105 [35mhas taken a fork[0m
+8      105 [35mhas taken a fork[0m
+8      105 [32mis eating[0m
+8      113 [35mhas taken a fork[0m
+8      113 [35mhas taken a fork[0m
+8      113 [32mis eating[0m
+8      119 [35mhas taken a fork[0m
+8      119 [35mhas taken a fork[0m
+8      119 [32mis eating[0m
+8      125 [35mhas taken a fork[0m
+8      125 [35mhas taken a fork[0m
+8      125 [32mis eating[0m
+8      131 [35mhas taken a fork[0m
+8      131 [35mhas taken a fork[0m
+8      131 [32mis eating[0m
+8      137 [35mhas taken a fork[0m
+8      137 [35mhas taken a fork[0m
+8      137 [32mis eating[0m
+8      143 [35mhas taken a fork[0m
+8      143 [35mhas taken a fork[0m
+8      143 [32mis eating[0m
+8      149 [35mhas taken a fork[0m
+8      149 [35mhas taken a fork[0m
+8      149 [32mis eating[0m
+8      155 [35mhas taken a fork[0m
+8      155 [35mhas taken a fork[0m
+8      155 [32mis eating[0m
+8      159 [35mhas taken a fork[0m
+8      159 [35mhas taken a fork[0m
+8      159 [32mis eating[0m
+8      165 [35mhas taken a fork[0m
+8      165 [35mhas taken a fork[0m
+9      169 [35mhas taken a fork[0m
+9      169 [35mhas taken a fork[0m
+9      169 [32mis eating[0m
+9      177 [35mhas taken a fork[0m
+9      177 [35mhas taken a fork[0m
+9      177 [32mis eating[0m
+9      183 [35mhas taken a fork[0m
+9      183 [35mhas taken a fork[0m
+9      183 [32mis eating[0m
+9      189 [35mhas taken a fork[0m
+9      189 [35mhas taken a fork[0m
+9      189 [32mis eating[0m
+9      195 [35mhas taken a fork[0m
+9      195 [35mhas taken a fork[0m
+9      195 [32mis eating[0m
+9      5 [35mhas taken a fork[0m
+9      5 [35mhas taken a fork[0m
+9      5 [32mis eating[0m
+9      9 [35mhas taken a fork[0m
+9      9 [35mhas taken a fork[0m
+9      9 [32mis eating[0m
+9      19 [35mhas taken a fork[0m
+9      19 [35mhas taken a fork[0m
+9      19 [32mis eating[0m
+9      27 [35mhas taken a fork[0m
+9      27 [35mhas taken a fork[0m
+9      27 [32mis eating[0m
+9      33 [35mhas taken a fork[0m
+9      33 [35mhas taken a fork[0m
+9      33 [32mis eating[0m
+9      45 [35mhas taken a fork[0m
+9      45 [35mhas taken a fork[0m
+9      45 [32mis eating[0m
+9      53 [35mhas taken a fork[0m
+9      53 [35mhas taken a fork[0m
+9      53 [32mis eating[0m
+9      63 [35mhas taken a fork[0m
+9      63 [35mhas taken a fork[0m
+9      63 [32mis eating[0m
+9      71 [35mhas taken a fork[0m
+9      71 [35mhas taken a fork[0m
+9      71 [32mis eating[0m
+9      79 [32mis eating[0m
+9      83 [35mhas taken a fork[0m
+9      83 [35mhas taken a fork[0m
+9      83 [32mis eating[0m
+9      91 [35mhas taken a fork[0m
+9      91 [35mhas taken a fork[0m
+9      91 [32mis eating[0m
+9      99 [35mhas taken a fork[0m
+9      99 [35mhas taken a fork[0m
+9      99 [32mis eating[0m
+9      109 [35mhas taken a fork[0m
+9      109 [35mhas taken a fork[0m
+9      109 [32mis eating[0m
+9      117 [35mhas taken a fork[0m
+9      117 [35mhas taken a fork[0m
+9      117 [32mis eating[0m
+9      127 [35mhas taken a fork[0m
+9      127 [35mhas taken a fork[0m
+9      127 [32mis eating[0m
+9      135 [35mhas taken a fork[0m
+9      135 [35mhas taken a fork[0m
+9      135 [32mis eating[0m
+9      145 [35mhas taken a fork[0m
+9      145 [35mhas taken a fork[0m
+9      145 [32mis eating[0m
+9      153 [35mhas taken a fork[0m
+9      153 [35mhas taken a fork[0m
+9      153 [32mis eating[0m
+9      163 [35mhas taken a fork[0m
+9      163 [35mhas taken a fork[0m
+9      163 [32mis eating[0m
+9      165 [32mis eating[0m
+9      173 [35mhas taken a fork[0m
+9      173 [35mhas taken a fork[0m
+9      173 [32mis eating[0m
+9      181 [35mhas taken a fork[0m
+9      181 [35mhas taken a fork[0m
+9      181 [32mis eating[0m
+9      191 [35mhas taken a fork[0m
+9      191 [35mhas taken a fork[0m
+9      191 [32mis eating[0m
+9      197 [35mhas taken a fork[0m
+9      197 [35mhas taken a fork[0m
+9      197 [32mis eating[0m
+9      13 [35mhas taken a fork[0m
+9      13 [35mhas taken a fork[0m
+9      13 [32mis eating[0m
+9      25 [35mhas taken a fork[0m
+9      25 [35mhas taken a fork[0m
+9      25 [32mis eating[0m
+9      39 [35mhas taken a fork[0m
+9      39 [35mhas taken a fork[0m
+9      39 [32mis eating[0m
+9      52 [33mis thinking[0m
+9      57 [35mhas taken a fork[0m
+9      57 [35mhas taken a fork[0m
+9      57 [32mis eating[0m
+9      69 [35mhas taken a fork[0m
+9      69 [35mhas taken a fork[0m
+9      69 [32mis eating[0m
+9      85 [35mhas taken a fork[0m
+9      85 [35mhas taken a fork[0m
+9      85 [32mis eating[0m
+9      97 [35mhas taken a fork[0m
+9      97 [35mhas taken a fork[0m
+9      97 [32mis eating[0m
+9      111 [35mhas taken a fork[0m
+9      111 [35mhas taken a fork[0m
+9      111 [32mis eating[0m
+9      123 [35mhas taken a fork[0m
+9      123 [35mhas taken a fork[0m
+9      123 [32mis eating[0m
+9      139 [35mhas taken a fork[0m
+9      139 [35mhas taken a fork[0m
+9      139 [32mis eating[0m
+9      147 [35mhas taken a fork[0m
+9      147 [35mhas taken a fork[0m
+9      147 [32mis eating[0m
+9      167 [35mhas taken a fork[0m
+9      167 [35mhas taken a fork[0m
+9      167 [32mis eating[0m
+9      179 [35mhas taken a fork[0m
+9      179 [35mhas taken a fork[0m
+9      179 [32mis eating[0m
+9      193 [35mhas taken a fork[0m
+9      193 [35mhas taken a fork[0m
+9      193 [32mis eating[0m
+9      7 [33mis thinking[0m
+9      15 [35mhas taken a fork[0m
+9      15 [35mhas taken a fork[0m
+9      15 [32mis eating[0m
+9      37 [35mhas taken a fork[0m
+9      37 [35mhas taken a fork[0m
+9      37 [32mis eating[0m
+9      59 [35mhas taken a fork[0m
+9      59 [35mhas taken a fork[0m
+9      59 [32mis eating[0m
+9      77 [35mhas taken a fork[0m
+9      77 [35mhas taken a fork[0m
+9      77 [32mis eating[0m
+9      103 [35mhas taken a fork[0m
+9      103 [35mhas taken a fork[0m
+9      103 [32mis eating[0m
+9      121 [35mhas taken a fork[0m
+9      121 [35mhas taken a fork[0m
+9      121 [32mis eating[0m
+9      141 [35mhas taken a fork[0m
+9      141 [35mhas taken a fork[0m
+9      141 [32mis eating[0m
+9      161 [35mhas taken a fork[0m
+9      161 [35mhas taken a fork[0m
+9      161 [32mis eating[0m
+9      185 [35mhas taken a fork[0m
+9      185 [35mhas taken a fork[0m
+9      185 [32mis eating[0m
+9      199 [35mhas taken a fork[0m
+9      199 [35mhas taken a fork[0m
+9      199 [32mis eating[0m
+9      31 [35mhas taken a fork[0m
+9      31 [35mhas taken a fork[0m
+9      31 [32mis eating[0m
+9      49 [35mhas taken a fork[0m
+9      49 [35mhas taken a fork[0m
+9      49 [32mis eating[0m
+9      93 [32mis eating[0m
+9      107 [35mhas taken a fork[0m
+9      107 [35mhas taken a fork[0m
+9      107 [32mis eating[0m
+9      133 [35mhas taken a fork[0m
+9      133 [35mhas taken a fork[0m
+9      133 [32mis eating[0m
+9      171 [35mhas taken a fork[0m
+9      171 [35mhas taken a fork[0m
+9      171 [32mis eating[0m
+9      187 [35mhas taken a fork[0m
+9      187 [35mhas taken a fork[0m
+9      187 [32mis eating[0m
+9      43 [35mhas taken a fork[0m
+9      43 [35mhas taken a fork[0m
+9      43 [32mis eating[0m
+9      87 [35mhas taken a fork[0m
+9      87 [35mhas taken a fork[0m
+10     87 [32mis eating[0m
+10     151 [35mhas taken a fork[0m
+10     151 [35mhas taken a fork[0m
+10     151 [32mis eating[0m
+10     7 [35mhas taken a fork[0m
+10     7 [35mhas taken a fork[0m
+10     7 [32mis eating[0m
+10     75 [35mhas taken a fork[0m
+10     75 [35mhas taken a fork[0m
+10     75 [32mis eating[0m
+10     175 [35mhas taken a fork[0m
+10     175 [35mhas taken a fork[0m
+10     175 [32mis eating[0m
+10     65 [35mhas taken a fork[0m
+10     65 [35mhas taken a fork[0m
+10     65 [32mis eating[0m
+10     157 [35mhas taken a fork[0m
+10     157 [35mhas taken a fork[0m
+10     157 [32mis eating[0m
+10     115 [35mhas taken a fork[0m
+10     115 [35mhas taken a fork[0m
+10     115 [32mis eating[0m
+10     129 [35mhas taken a fork[0m
+10     129 [35mhas taken a fork[0m
+10     129 [32mis eating[0m
+10     21 [35mhas taken a fork[0m
+10     21 [35mhas taken a fork[0m
+10     21 [32mis eating[0m
+100    1 [36mis sleeping[0m
+107    3 [36mis sleeping[0m
+107    51 [36mis sleeping[0m
+109    185 [36mis sleeping[0m
+109    67 [36mis sleeping[0m
+109    143 [36mis sleeping[0m
+109    173 [36mis sleeping[0m
+109    9 [36mis sleeping[0m
+109    113 [36mis sleeping[0m
+109    199 [36mis sleeping[0m
+109    37 [36mis sleeping[0m
+109    183 [36mis sleeping[0m
+109    109 [36mis sleeping[0m
+109    69 [36mis sleeping[0m
+109    165 [36mis sleeping[0m
+109    159 [36mis sleeping[0m
+109    123 [36mis sleeping[0m
+109    135 [36mis sleeping[0m
+109    13 [36mis sleeping[0m
+109    141 [36mis sleeping[0m
+109    139 [36mis sleeping[0m
+109    23 [36mis sleeping[0m
+109    29 [36mis sleeping[0m
+109    117 [36mis sleeping[0m
+109    193 [36mis sleeping[0m
+109    53 [36mis sleeping[0m
+109    105 [36mis sleeping[0m
+109    163 [36mis sleeping[0m
+109    187 [36mis sleeping[0m
+109    101 [36mis sleeping[0m
+109    107 [36mis sleeping[0m
+109    91 [36mis sleeping[0m
+110    147 [36mis sleeping[0m
+110    81 [36mis sleeping[0m
+110    41 [36mis sleeping[0m
+110    171 [36mis sleeping[0m
+110    125 [36mis sleeping[0m
+110    43 [36mis sleeping[0m
+110    61 [36mis sleeping[0m
+110    121 [36mis sleeping[0m
+110    127 [36mis sleeping[0m
+110    137 [36mis sleeping[0m
+110    47 [36mis sleeping[0m
+110    161 [36mis sleeping[0m
+110    49 [36mis sleeping[0m
+110    97 [36mis sleeping[0m
+110    85 [36mis sleeping[0m
+110    149 [36mis sleeping[0m
+110    89 [36mis sleeping[0m
+110    177 [36mis sleeping[0m
+110    35 [36mis sleeping[0m
+110    10 [35mhas taken a fork[0m
+110    12 [35mhas taken a fork[0m
+110    16 [35mhas taken a fork[0m
+110    26 [35mhas taken a fork[0m
+110    34 [35mhas taken a fork[0m
+110    38 [35mhas taken a fork[0m
+110    38 [35mhas taken a fork[0m
+110    58 [35mhas taken a fork[0m
+110    167 [36mis sleeping[0m
+110    133 [36mis sleeping[0m
+110    179 [36mis sleeping[0m
+110    15 [36mis sleeping[0m
+110    31 [36mis sleeping[0m
+110    17 [36mis sleeping[0m
+110    155 [36mis sleeping[0m
+110    145 [36mis sleeping[0m
+110    103 [36mis sleeping[0m
+110    153 [36mis sleeping[0m
+110    33 [36mis sleeping[0m
+110    95 [36mis sleeping[0m
+110    27 [36mis sleeping[0m
+110    25 [36mis sleeping[0m
+110    55 [36mis sleeping[0m
+110    71 [36mis sleeping[0m
+110    111 [36mis sleeping[0m
+110    11 [36mis sleeping[0m
+110    77 [36mis sleeping[0m
+110    45 [36mis sleeping[0m
+110    99 [36mis sleeping[0m
+110    73 [36mis sleeping[0m
+110    5 [36mis sleeping[0m
+110    195 [36mis sleeping[0m
+110    131 [36mis sleeping[0m
+110    181 [36mis sleeping[0m
+110    119 [36mis sleeping[0m
+110    191 [36mis sleeping[0m
+110    93 [36mis sleeping[0m
+110    10 [35mhas taken a fork[0m
+110    10 [32mis eating[0m
+110    14 [35mhas taken a fork[0m
+110    14 [35mhas taken a fork[0m
+111    14 [32mis eating[0m
+111    12 [35mhas taken a fork[0m
+111    20 [35mhas taken a fork[0m
+111    16 [35mhas taken a fork[0m
+111    16 [32mis eating[0m
+111    30 [35mhas taken a fork[0m
+111    30 [35mhas taken a fork[0m
+111    30 [32mis eating[0m
+111    32 [35mhas taken a fork[0m
+111    32 [35mhas taken a fork[0m
+111    32 [32mis eating[0m
+111    44 [35mhas taken a fork[0m
+111    44 [35mhas taken a fork[0m
+111    34 [35mhas taken a fork[0m
+111    68 [35mhas taken a fork[0m
+111    72 [35mhas taken a fork[0m
+111    72 [35mhas taken a fork[0m
+111    72 [32mis eating[0m
+111    48 [35mhas taken a fork[0m
+111    62 [35mhas taken a fork[0m
+111    62 [35mhas taken a fork[0m
+111    62 [32mis eating[0m
+111    169 [36mis sleeping[0m
+111    39 [36mis sleeping[0m
+111    57 [36mis sleeping[0m
+111    59 [36mis sleeping[0m
+111    197 [36mis sleeping[0m
+111    19 [36mis sleeping[0m
+111    79 [36mis sleeping[0m
+111    83 [36mis sleeping[0m
+111    63 [36mis sleeping[0m
+111    90 [35mhas taken a fork[0m
+111    90 [35mhas taken a fork[0m
+111    28 [35mhas taken a fork[0m
+111    28 [35mhas taken a fork[0m
+111    28 [32mis eating[0m
+111    36 [35mhas taken a fork[0m
+111    36 [35mhas taken a fork[0m
+111    36 [32mis eating[0m
+111    76 [35mhas taken a fork[0m
+111    76 [35mhas taken a fork[0m
+111    7 [36mis sleeping[0m
+111    70 [35mhas taken a fork[0m
+111    115 [36mis sleeping[0m
+111    78 [35mhas taken a fork[0m
+111    82 [35mhas taken a fork[0m
+111    106 [35mhas taken a fork[0m
+111    106 [35mhas taken a fork[0m
+111    106 [32mis eating[0m
+111    108 [35mhas taken a fork[0m
+111    108 [35mhas taken a fork[0m
+111    110 [35mhas taken a fork[0m
+111    175 [36mis sleeping[0m
+111    66 [35mhas taken a fork[0m
+112    157 [36mis sleeping[0m
+112    114 [35mhas taken a fork[0m
+112    56 [35mhas taken a fork[0m
+112    18 [35mhas taken a fork[0m
+112    18 [35mhas taken a fork[0m
+112    18 [32mis eating[0m
+112    24 [35mhas taken a fork[0m
+112    24 [35mhas taken a fork[0m
+112    24 [32mis eating[0m
+112    118 [35mhas taken a fork[0m
+112    21 [36mis sleeping[0m
+112    92 [35mhas taken a fork[0m
+112    92 [35mhas taken a fork[0m
+112    124 [35mhas taken a fork[0m
+112    26 [35mhas taken a fork[0m
+112    20 [35mhas taken a fork[0m
+112    42 [35mhas taken a fork[0m
+112    75 [36mis sleeping[0m
+112    34 [32mis eating[0m
+112    132 [35mhas taken a fork[0m
+112    132 [35mhas taken a fork[0m
+112    132 [32mis eating[0m
+112    134 [35mhas taken a fork[0m
+112    138 [35mhas taken a fork[0m
+112    138 [35mhas taken a fork[0m
+112    138 [32mis eating[0m
+112    142 [35mhas taken a fork[0m
+112    142 [35mhas taken a fork[0m
+112    146 [35mhas taken a fork[0m
+112    148 [35mhas taken a fork[0m
+112    150 [35mhas taken a fork[0m
+112    152 [35mhas taken a fork[0m
+112    154 [35mhas taken a fork[0m
+112    156 [35mhas taken a fork[0m
+112    156 [35mhas taken a fork[0m
+112    156 [32mis eating[0m
+112    158 [35mhas taken a fork[0m
+112    158 [35mhas taken a fork[0m
+112    164 [35mhas taken a fork[0m
+112    164 [35mhas taken a fork[0m
+112    164 [32mis eating[0m
+112    170 [35mhas taken a fork[0m
+112    170 [35mhas taken a fork[0m
+112    176 [35mhas taken a fork[0m
+112    180 [35mhas taken a fork[0m
+112    180 [35mhas taken a fork[0m
+112    180 [32mis eating[0m
+112    184 [35mhas taken a fork[0m
+112    184 [35mhas taken a fork[0m
+112    184 [32mis eating[0m
+112    186 [35mhas taken a fork[0m
+112    190 [35mhas taken a fork[0m
+112    190 [35mhas taken a fork[0m
+112    190 [32mis eating[0m
+112    194 [35mhas taken a fork[0m
+112    70 [35mhas taken a fork[0m
+112    70 [32mis eating[0m
+112    200 [35mhas taken a fork[0m
+112    200 [35mhas taken a fork[0m
+112    200 [32mis eating[0m
+112    8 [35mhas taken a fork[0m
+112    8 [35mhas taken a fork[0m
+112    8 [32mis eating[0m
+112    87 [36mis sleeping[0m
+112    96 [35mhas taken a fork[0m
+112    68 [35mhas taken a fork[0m
+112    80 [35mhas taken a fork[0m
+112    48 [35mhas taken a fork[0m
+112    129 [36mis sleeping[0m
+112    92 [32mis eating[0m
+112    26 [32mis eating[0m
+112    44 [32mis eating[0m
+112    76 [32mis eating[0m
+112    142 [32mis eating[0m
+112    146 [35mhas taken a fork[0m
+112    146 [32mis eating[0m
+112    148 [35mhas taken a fork[0m
+112    148 [32mis eating[0m
+112    154 [35mhas taken a fork[0m
+112    154 [32mis eating[0m
+112    162 [35mhas taken a fork[0m
+112    162 [35mhas taken a fork[0m
+112    162 [32mis eating[0m
+112    158 [32mis eating[0m
+112    174 [35mhas taken a fork[0m
+112    174 [35mhas taken a fork[0m
+112    174 [32mis eating[0m
+112    172 [35mhas taken a fork[0m
+112    172 [35mhas taken a fork[0m
+112    176 [35mhas taken a fork[0m
+112    176 [32mis eating[0m
+112    186 [35mhas taken a fork[0m
+112    186 [32mis eating[0m
+112    192 [35mhas taken a fork[0m
+113    196 [35mhas taken a fork[0m
+113    196 [35mhas taken a fork[0m
+113    196 [32mis eating[0m
+113    6 [35mhas taken a fork[0m
+113    6 [35mhas taken a fork[0m
+113    6 [32mis eating[0m
+113    54 [35mhas taken a fork[0m
+113    54 [35mhas taken a fork[0m
+113    54 [32mis eating[0m
+113    74 [35mhas taken a fork[0m
+113    74 [35mhas taken a fork[0m
+113    104 [35mhas taken a fork[0m
+113    104 [35mhas taken a fork[0m
+113    104 [32mis eating[0m
+113    82 [35mhas taken a fork[0m
+113    82 [32mis eating[0m
+113    108 [32mis eating[0m
+113    50 [35mhas taken a fork[0m
+113    50 [35mhas taken a fork[0m
+113    84 [35mhas taken a fork[0m
+113    84 [35mhas taken a fork[0m
+113    84 [32mis eating[0m
+113    114 [35mhas taken a fork[0m
+113    114 [32mis eating[0m
+113    80 [35mhas taken a fork[0m
+113    80 [32mis eating[0m
+113    38 [32mis eating[0m
+113    64 [35mhas taken a fork[0m
+113    64 [35mhas taken a fork[0m
+113    64 [32mis eating[0m
+113    58 [35mhas taken a fork[0m
+113    58 [32mis eating[0m
+113    12 [32mis eating[0m
+113    56 [35mhas taken a fork[0m
+113    56 [32mis eating[0m
+113    120 [35mhas taken a fork[0m
+113    120 [35mhas taken a fork[0m
+113    120 [32mis eating[0m
+113    118 [35mhas taken a fork[0m
+113    118 [32mis eating[0m
+113    126 [35mhas taken a fork[0m
+113    126 [35mhas taken a fork[0m
+113    126 [32mis eating[0m
+113    128 [35mhas taken a fork[0m
+113    128 [35mhas taken a fork[0m
+113    128 [32mis eating[0m
+113    98 [35mhas taken a fork[0m
+113    98 [35mhas taken a fork[0m
+113    98 [32mis eating[0m
+113    46 [35mhas taken a fork[0m
+113    46 [35mhas taken a fork[0m
+113    46 [32mis eating[0m
+113    134 [35mhas taken a fork[0m
+113    134 [32mis eating[0m
+113    140 [35mhas taken a fork[0m
+113    140 [35mhas taken a fork[0m
+113    140 [32mis eating[0m
+113    152 [35mhas taken a fork[0m
+113    152 [32mis eating[0m
+113    160 [35mhas taken a fork[0m
+113    160 [35mhas taken a fork[0m
+113    160 [32mis eating[0m
+113    178 [35mhas taken a fork[0m
+113    178 [35mhas taken a fork[0m
+113    178 [32mis eating[0m
+113    188 [35mhas taken a fork[0m
+113    188 [35mhas taken a fork[0m
+113    192 [35mhas taken a fork[0m
+113    192 [32mis eating[0m
+113    2 [35mhas taken a fork[0m
+113    2 [35mhas taken a fork[0m
+113    2 [32mis eating[0m
+113    52 [35mhas taken a fork[0m
+113    52 [35mhas taken a fork[0m
+113    52 [32mis eating[0m
+113    96 [35mhas taken a fork[0m
+113    96 [32mis eating[0m
+113    68 [32mis eating[0m
+113    65 [36mis sleeping[0m
+113    50 [32mis eating[0m
+113    110 [35mhas taken a fork[0m
+113    110 [32mis eating[0m
+113    60 [35mhas taken a fork[0m
+113    60 [35mhas taken a fork[0m
+113    60 [32mis eating[0m
+113    116 [35mhas taken a fork[0m
+113    116 [35mhas taken a fork[0m
+113    116 [32mis eating[0m
+113    90 [32mis eating[0m
+113    122 [35mhas taken a fork[0m
+113    122 [35mhas taken a fork[0m
+113    122 [32mis eating[0m
+113    40 [35mhas taken a fork[0m
+113    40 [35mhas taken a fork[0m
+113    40 [32mis eating[0m
+113    42 [35mhas taken a fork[0m
+114    42 [32mis eating[0m
+114    100 [35mhas taken a fork[0m
+114    100 [35mhas taken a fork[0m
+114    102 [35mhas taken a fork[0m
+114    102 [35mhas taken a fork[0m
+114    102 [32mis eating[0m
+114    150 [35mhas taken a fork[0m
+114    150 [32mis eating[0m
+114    168 [35mhas taken a fork[0m
+114    170 [32mis eating[0m
+114    172 [32mis eating[0m
+114    182 [35mhas taken a fork[0m
+114    182 [35mhas taken a fork[0m
+114    188 [32mis eating[0m
+114    194 [35mhas taken a fork[0m
+114    194 [32mis eating[0m
+114    94 [35mhas taken a fork[0m
+114    94 [35mhas taken a fork[0m
+114    94 [32mis eating[0m
+114    78 [35mhas taken a fork[0m
+114    78 [32mis eating[0m
+114    66 [35mhas taken a fork[0m
+114    66 [32mis eating[0m
+114    189 [36mis sleeping[0m
+114    112 [35mhas taken a fork[0m
+114    112 [35mhas taken a fork[0m
+114    112 [32mis eating[0m
+114    22 [35mhas taken a fork[0m
+114    22 [35mhas taken a fork[0m
+114    22 [32mis eating[0m
+114    100 [32mis eating[0m
+114    136 [35mhas taken a fork[0m
+114    136 [35mhas taken a fork[0m
+114    136 [32mis eating[0m
+114    166 [35mhas taken a fork[0m
+114    166 [35mhas taken a fork[0m
+114    166 [32mis eating[0m
+114    198 [35mhas taken a fork[0m
+114    198 [35mhas taken a fork[0m
+114    198 [32mis eating[0m
+114    88 [35mhas taken a fork[0m
+114    88 [35mhas taken a fork[0m
+114    88 [32mis eating[0m
+114    48 [32mis eating[0m
+114    124 [35mhas taken a fork[0m
+114    124 [32mis eating[0m
+114    130 [35mhas taken a fork[0m
+114    130 [35mhas taken a fork[0m
+114    130 [32mis eating[0m
+114    168 [35mhas taken a fork[0m
+114    168 [32mis eating[0m
+114    4 [35mhas taken a fork[0m
+114    4 [35mhas taken a fork[0m
+114    4 [32mis eating[0m
+114    151 [36mis sleeping[0m
+114    20 [32mis eating[0m
+114    144 [35mhas taken a fork[0m
+114    144 [35mhas taken a fork[0m
+114    144 [32mis eating[0m
+114    74 [32mis eating[0m
+114    86 [35mhas taken a fork[0m
+114    86 [35mhas taken a fork[0m
+114    182 [32mis eating[0m
+114    86 [32mis eating[0m
+200    1 [33mis thinking[0m
+207    51 [33mis thinking[0m
+208    3 [33mis thinking[0m
+210    71 [33mis thinking[0m
+210    45 [33mis thinking[0m
+210    149 [33mis thinking[0m
+210    153 [33mis thinking[0m
+210    125 [33mis thinking[0m
+210    61 [33mis thinking[0m
+210    35 [33mis thinking[0m
+210    177 [33mis thinking[0m
+210    11 [33mis thinking[0m
+210    41 [33mis thinking[0m
+210    9 [33mis thinking[0m
+210    73 [33mis thinking[0m
+210    67 [33mis thinking[0m
+210    43 [33mis thinking[0m
+210    165 [33mis thinking[0m
+210    107 [33mis thinking[0m
+210    17 [33mis thinking[0m
+210    145 [33mis thinking[0m
+210    137 [33mis thinking[0m
+210    15 [33mis thinking[0m
+210    99 [33mis thinking[0m
+210    179 [33mis thinking[0m
+210    113 [33mis thinking[0m
+210    49 [33mis thinking[0m
+210    29 [33mis thinking[0m
+210    121 [33mis thinking[0m
+210    5 [33mis thinking[0m
+211    169 [33mis thinking[0m
+211    155 [33mis thinking[0m
+211    111 [33mis thinking[0m
+211    55 [33mis thinking[0m
+211    147 [33mis thinking[0m
+211    101 [33mis thinking[0m
+211    173 [33mis thinking[0m
+211    191 [33mis thinking[0m
+211    143 [33mis thinking[0m
+211    77 [33mis thinking[0m
+211    185 [33mis thinking[0m
+211    105 [33mis thinking[0m
+211    167 [33mis thinking[0m
+211    103 [33mis thinking[0m
+211    91 [33mis thinking[0m
+211    159 [33mis thinking[0m
+211    163 [33mis thinking[0m
+211    47 [33mis thinking[0m
+211    187 [33mis thinking[0m
+211    95 [33mis thinking[0m
+211    62 [36mis sleeping[0m
+211    183 [33mis thinking[0m
+211    193 [33mis thinking[0m
+211    181 [33mis thinking[0m
+211    117 [33mis thinking[0m
+211    133 [33mis thinking[0m
+211    139 [33mis thinking[0m
+211    199 [33mis thinking[0m
+211    89 [33mis thinking[0m
+211    31 [33mis thinking[0m
+211    93 [33mis thinking[0m
+211    10 [36mis sleeping[0m
+211    119 [33mis thinking[0m
+212    53 [33mis thinking[0m
+212    161 [33mis thinking[0m
+212    171 [33mis thinking[0m
+212    85 [33mis thinking[0m
+212    23 [33mis thinking[0m
+212    81 [33mis thinking[0m
+212    11 [35mhas taken a fork[0m
+212    127 [33mis thinking[0m
+212    195 [33mis thinking[0m
+212    123 [33mis thinking[0m
+212    27 [33mis thinking[0m
+212    69 [33mis thinking[0m
+212    97 [33mis thinking[0m
+212    25 [33mis thinking[0m
+212    187 [35mhas taken a fork[0m
+213    109 [33mis thinking[0m
+213    15 [35mhas taken a fork[0m
+213    147 [35mhas taken a fork[0m
+213    107 [35mhas taken a fork[0m
+213    13 [33mis thinking[0m
+213    9 [35mhas taken a fork[0m
+213    9 [35mhas taken a fork[0m
+213    9 [32mis eating[0m
+213    141 [33mis thinking[0m
+214    37 [33mis thinking[0m
+214    33 [33mis thinking[0m
+214    35 [35mhas taken a fork[0m
+214    147 [35mhas taken a fork[0m
+214    147 [32mis eating[0m
+214    149 [35mhas taken a fork[0m
+214    177 [35mhas taken a fork[0m
+214    43 [35mhas taken a fork[0m
+214    43 [35mhas taken a fork[0m
+214    43 [32mis eating[0m
+214    131 [33mis thinking[0m
+214    45 [35mhas taken a fork[0m
+214    101 [35mhas taken a fork[0m
+214    135 [33mis thinking[0m
+214    91 [35mhas taken a fork[0m
+214    91 [35mhas taken a fork[0m
+214    91 [32mis eating[0m
+214    193 [35mhas taken a fork[0m
+214    165 [35mhas taken a fork[0m
+215    1 [31mdied[0m

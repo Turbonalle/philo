@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 10:37:59 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/10 17:13:16 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/18 10:24:24 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ void	eat_color(t_philo *p)
 
 void	start_dining_color(t_philo *p)
 {
-	pthread_mutex_lock(&(p->m_start));
+	pthread_mutex_lock(&(p->data->m_start));
+	pthread_mutex_unlock(&(p->data->m_start));
 	if (p->data->n_philo == 1)
 		starve_to_death(p);
 	else
@@ -64,5 +65,4 @@ void	start_dining_color(t_philo *p)
 			message(p, YELLOW"is thinking"WHITE);
 		}
 	}	
-	pthread_mutex_unlock(&(p->m_start));
 }

@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 13:57:19 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/08 14:09:45 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/18 11:04:27 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	init_mutex(t_data *data)
 			return (data->error);
 		}
 	}
-	if (pthread_mutex_init(&(data->m_all_alive), NULL) != 0)
+	if (pthread_mutex_init(&(data->game_mutex), NULL) != 0)
 	{
 		error("Failed initializing mutex\n", data, 10);
 		return (data->error);
