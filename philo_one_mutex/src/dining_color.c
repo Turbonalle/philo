@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 10:37:59 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/18 14:42:11 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/19 17:35:21 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,18 @@ void	eat_color(t_philo *p)
 	message(p, PURPLE"has taken a fork"WHITE);
 	pthread_mutex_lock(&(p->data->forks[p->right_fork]));
 	message(p, PURPLE"has taken a fork"WHITE);
-	pthread_mutex_lock(&(p->p_mutex));
+	pthread_mutex_lock(&(p->data->game_mutex));
 	if (i_am_dead(p))
 	{
-		p->all_alive = 0;
+		p->data->all_alive = DEAD;
 		pthread_mutex_unlock(&(p->data->game_mutex));
 		pthread_mutex_unlock(&(p->data->forks[p->left_fork]));
 		pthread_mutex_unlock(&(p->data->forks[p->right_fork]));
 		return ;
 	}
-	message(p, GREEN"is eating"WHITE);
+	eat_message(p, GREEN"is eating"WHITE);
 	p->t_last_eat = time_now();
-	pthread_mutex_unlock(&(p->p_mutex));
+	pthread_mutex_unlock(&(p->data->game_mutex));
 	ft_sleep(p->data->t_eat);
 	pthread_mutex_lock(&(p->data->game_mutex));
 	(p->times_eaten)++;

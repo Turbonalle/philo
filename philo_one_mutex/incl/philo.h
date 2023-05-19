@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 15:55:22 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/18 12:41:56 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/19 17:21:07 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@
 # define CYAN "\033[36m"
 # define ON 1
 # define OFF 0
+# define ALIVE 1
+# define DEAD 0
 
 typedef struct s_philo
 {
@@ -39,7 +41,6 @@ typedef struct s_philo
 	int				right_fork;
 	int				times_eaten;
 	int				finished;
-	int				all_alive;
 	int				n;
 }					t_philo;
 
@@ -61,6 +62,7 @@ typedef struct s_data
 }					t_data;
 
 // MAIN
+void	eat_message(t_philo *p, char *msg);
 void		death_message(t_philo *p, char *msg);
 void		message(t_philo *p, char *msg);
 
