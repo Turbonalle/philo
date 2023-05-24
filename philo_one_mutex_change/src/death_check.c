@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 17:52:32 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/24 11:56:34 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/24 13:06:42 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ int		i_am_dead(t_philo *p)
 {
 	return (time_since(p->t_last_eat) > p->data->t_die);
 }
-
-//-----------------------------------------------------------------[DONE]
 
 // Lock game_mutex
 
@@ -50,8 +48,6 @@ int	is_philosopher_dead(t_philo *p)
 	pthread_mutex_unlock(&(p->data->game_mutex));
 	return (ALIVE);
 }
-
-//-----------------------------------------------------------------[DONE]
 
 // Lock philo mutex
 // Lock game mutex (in is_philosopher_dead)

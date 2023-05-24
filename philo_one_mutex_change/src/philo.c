@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 13:59:34 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/17 17:27:22 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/24 13:17:29 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ void	*philosopher(void *philo)
 	t_philo	*p;
 
 	p = (t_philo *)philo;
-	// if (p->data->color == ON)
+	if (p->data->color == ON)
 	start_dining_color(p);
-	// else
-	// 	start_dining_white(p);
+	else
+		start_dining_white(p);
 	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 10:37:59 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/24 11:36:46 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/24 13:10:39 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	put_down_forks(t_philo *p, int forks)
 	}
 }
 
-int	pick_up_forks(t_philo *p)
+int	grab_forks_color(t_philo *p)
 {
 	pthread_mutex_lock(&(p->data->forks[p->left_fork]));
 	if (!message(p, PURPLE"has taken a fork"WHITE))
@@ -42,7 +42,7 @@ int	pick_up_forks(t_philo *p)
 
 int	eat_color(t_philo *p)
 {
-	if (!pick_up_forks(p))
+	if (!grab_forks_color(p))
 		return (DEAD);	
 	if (!message(p, GREEN"is eating"WHITE))
 	{

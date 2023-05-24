@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 15:55:22 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/24 11:32:24 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/24 13:09:24 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,8 @@ void		starve_to_death(t_philo *p);
 
 // DINING
 void		start_dining_color(t_philo *p);
-// void		start_dining_white(t_philo *p);
+void		start_dining_white(t_philo *p);
+void		put_down_forks(t_philo *p, int forks);
 
 // CLEAN
 int			join_threads(t_data *data, int n);
