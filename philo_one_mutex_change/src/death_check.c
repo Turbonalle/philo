@@ -6,26 +6,11 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 17:52:32 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/24 13:26:25 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/24 13:49:53 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/philo.h"
-
-int	everyone_is_alive(t_philo *p)
-{
-	int	all_alive;
-
-	pthread_mutex_lock(&(p->data->game_mutex));
-	all_alive = p->data->all_alive;
-	pthread_mutex_unlock(&(p->data->game_mutex));
-	return (all_alive);
-}
-
-int	i_am_dead(t_philo *p)
-{
-	return (time_since(p->t_last_eat) > p->data->t_die);
-}
 
 int	is_philosopher_dead(t_philo *p)
 {

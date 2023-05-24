@@ -6,22 +6,11 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 10:37:59 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/24 13:27:41 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/24 13:40:50 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/philo.h"
-
-void	put_down_forks(t_philo *p, int forks)
-{
-	if (forks == 1)
-		pthread_mutex_unlock(&(p->data->forks[p->left_fork]));
-	if (forks == 2)
-	{
-		pthread_mutex_unlock(&(p->data->forks[p->left_fork]));
-		pthread_mutex_unlock(&(p->data->forks[p->right_fork]));
-	}
-}
 
 int	grab_forks_color(t_philo *p)
 {

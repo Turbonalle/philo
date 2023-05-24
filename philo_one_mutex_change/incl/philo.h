@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 15:55:22 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/24 13:09:24 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/24 13:44:56 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,32 +63,33 @@ typedef struct s_data
 	int				n_eat;
 }					t_data;
 
+// CLEAN
+int			join_threads(t_data *data, int n);
+void		destroy_forks(t_data *data, int n);
+
 // DEATH CHECK
 void		check_death(t_data *data);
+
+// DINING
+void		start_dining_color(t_philo *p);
+void		start_dining_white(t_philo *p);
 
 // ERROR
 void		error(char *str, t_data *data, int error_code);
 int			error_check(t_data *data, int ac, char *av[]);
 
-// INIT
-int			init_mutex(t_data *data);
-int			init_data(t_data *data, int ac, char *av[]);
+// INIT PHILO
 int			init_philo(t_data *data);
 
+// INIT
+int			init_data(t_data *data, int ac, char *av[]);
+int			init_mutex(t_data *data);
+
 // PHILO
-void		*philosopher(void *philo);
-void		ft_sleep(int ms);
-int			everyone_is_alive(t_philo *p);
-void		starve_to_death(t_philo *p);
-
-// DINING
-void		start_dining_color(t_philo *p);
-void		start_dining_white(t_philo *p);
 void		put_down_forks(t_philo *p, int forks);
-
-// CLEAN
-int			join_threads(t_data *data, int n);
-void		destroy_forks(t_data *data, int n);
+void		ft_sleep(int ms);
+void		starve_to_death(t_philo *p);
+void		*philosopher(void *philo);
 
 // TIME
 int			start_time(t_data *data);
