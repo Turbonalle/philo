@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 09:10:23 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/19 14:49:52 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/24 09:15:18 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	init_philo_data(t_data *data, int i)
 	data->philo[i].left_fork = i;
 	data->philo[i].right_fork = (i + 1) % data->n_philo;
 	data->philo[i].times_eaten = 0;
-	data->philo[i].finished = 0;
 	data->philo[i].n = i;
 }
 
@@ -28,6 +27,7 @@ int	init_philo(t_data *data)
 
 	data->all_alive = ALIVE;
 	data->all_finished = 0;
+	data->finished_philos = 0;
 	i = -1;
 	pthread_mutex_lock(&(data->game_mutex));
 	while (++i < data->n_philo)

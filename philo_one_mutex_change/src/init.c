@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 13:57:19 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/18 11:04:27 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/24 09:42:07 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	init_data(t_data *data, int ac, char *av[])
 	data->t_die = atoi(av[2]);
 	data->t_eat = atoi(av[3]);
 	data->t_sleep = atoi(av[4]);
+	// printf("%d %d %d %d\n", data->n_philo, data->t_die, data->t_eat, data->t_sleep);
 	if (ac == 6)
 		data->n_eat = atoi(av[5]);
 	data->philo = malloc(sizeof(t_philo) * data->n_philo);

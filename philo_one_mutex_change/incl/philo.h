@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 15:55:22 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/19 17:21:07 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/24 11:32:24 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@
 # define OFF 0
 # define ALIVE 1
 # define DEAD 0
+# define SUCCESS 1
+# define FAIL 0
 
 typedef struct s_philo
 {
@@ -40,7 +42,6 @@ typedef struct s_philo
 	int				left_fork;
 	int				right_fork;
 	int				times_eaten;
-	int				finished;
 	int				n;
 }					t_philo;
 
@@ -54,6 +55,7 @@ typedef struct s_data
 	int				color;
 	int				all_alive;
 	int				all_finished;
+	int				finished_philos;
 	int				n_philo;
 	int				t_die;
 	int				t_eat;
@@ -61,15 +63,7 @@ typedef struct s_data
 	int				n_eat;
 }					t_data;
 
-// MAIN
-void	eat_message(t_philo *p, char *msg);
-void		death_message(t_philo *p, char *msg);
-void		message(t_philo *p, char *msg);
-
 // DEATH CHECK
-int			i_am_dead(t_philo *p);
-void		tell_main(t_philo *p);
-void		tell_philos(t_data *data);
 void		check_death(t_data *data);
 
 // ERROR
@@ -101,9 +95,9 @@ long int	time_since(long int start);
 long int	time_now(void);
 
 // UTILS
+int			message(t_philo *p, char *msg);
 int			ft_atoi(const char *str);
 size_t		ft_strlen(const char *str);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
-void		message(t_philo *p, char *msg);
 
 #endif

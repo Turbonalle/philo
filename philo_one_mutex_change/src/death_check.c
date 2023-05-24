@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 17:52:32 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/19 17:34:26 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/24 11:56:34 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,10 @@ int	is_philosopher_dead(t_philo *p)
 	current_time = time_now();
 	if (current_time - p->t_last_eat > p->data->t_die)
 	{
-		if (data->color == ON)
-			death_message(&p, RED"died"WHITE);
-			printf("%-6ld %d "RED"died"WHITE"\n", current_time, p->n + 1);
+		if (p->data->color == ON)
+			printf("%-6ld %d "RED"died"WHITE"\n", current_time - p->data->t_start, p->n + 1);
 		else
-			printf("%-6ld %d died\n", current_time, p->n + 1);
+			printf("%-6ld %d died\n", current_time - p->data->t_start, p->n + 1);
 		p->data->all_alive = DEAD;
 		pthread_mutex_unlock(&(p->data->game_mutex));
 		return (DEAD);
@@ -72,9 +71,10 @@ void	check_death(t_data *data)
 		while (++i < data->n_philo)
 		{
 			pthread_mutex_lock(&(data->philo[i].p_mutex));
-			all_alive = is_philosopher_dead(data, i);
-			if (data->philo[i].finished)
-				finished_philos++;
+			all_alive = is_philosopher_dead(&(data->philo[i]));
+			pthread_mutex_lock(&(data->game_mutex));
+			finished_philos = data->finished_philos;
+			pthread_mutex_unlock(&(data->game_mutex));
 			if (!all_alive || finished_philos >= data->n_philo)
 			{
 				pthread_mutex_unlock(&(data->philo[i].p_mutex));
