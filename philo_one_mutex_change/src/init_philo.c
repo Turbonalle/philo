@@ -6,11 +6,21 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 09:10:23 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/24 09:15:18 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/24 13:34:39 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/philo.h"
+
+void	set_starting_point(t_data *data)
+{
+	int	i;
+
+	start_time(data);
+	i = -1;
+	while (++i < data->n_philo)
+		data->philo[i].t_last_eat = data->t_start;
+}
 
 void	init_philo_data(t_data *data, int i)
 {
@@ -25,9 +35,6 @@ int	init_philo(t_data *data)
 {
 	int	i;
 
-	data->all_alive = ALIVE;
-	data->all_finished = 0;
-	data->finished_philos = 0;
 	i = -1;
 	pthread_mutex_lock(&(data->game_mutex));
 	while (++i < data->n_philo)
@@ -48,10 +55,7 @@ int	init_philo(t_data *data)
 			return (data->error);
 		}
 	}
-	start_time(data);
-	i = -1;
-	while (++i < data->n_philo)
-		data->philo[i].t_last_eat = data->t_start;
+	set_starting_point(data);
 	pthread_mutex_unlock(&(data->game_mutex));
 	return (data->error);
 }

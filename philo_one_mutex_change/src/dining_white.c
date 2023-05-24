@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 10:36:35 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/24 13:11:03 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/24 13:27:58 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	grab_forks_white(t_philo *p)
 int	eat_white(t_philo *p)
 {
 	if (!grab_forks_white(p))
-		return (DEAD);	
+		return (DEAD);
 	if (!message(p, "is eating"))
 	{
 		put_down_forks(p, 2);

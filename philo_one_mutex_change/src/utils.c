@@ -6,7 +6,7 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 10:51:43 by jbagger           #+#    #+#             */
-/*   Updated: 2023/05/24 09:23:44 by jbagger          ###   ########.fr       */
+/*   Updated: 2023/05/24 13:28:59 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	message(t_philo *p, char *msg)
 		printf("%-6ld %d %s\n", time_since(p->data->t_start), p->n + 1, msg);
 	else
 	{
-		pthread_mutex_unlock(&(p->data->game_mutex));	
+		pthread_mutex_unlock(&(p->data->game_mutex));
 		return (0);
 	}
 	pthread_mutex_unlock(&(p->data->game_mutex));
